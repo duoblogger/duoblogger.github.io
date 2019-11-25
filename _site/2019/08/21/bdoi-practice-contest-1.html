@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  
+</script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+
+    <title>
+        
+          BDOI Practice Contest-1 Analysis - duoblogger
+        
+    </title>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="mainNav">
+        <div class="container">
+          <a class="navbar-brand" href="/">DUOBLOGGER</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/about">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/objective">OBJECTIVE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/posts">POSTS</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/authors">Authors</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/tags">CATEGORY</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/contact">CONTACT</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+
+  <!-- <div class="container-fluid"> -->
+
+<div class="jumbotron">
+    <h1 class="text-center" id="h1_for_my_title"><b>Programming Throwdown</b></h1>
+    <h6 class="text-center" id="h1_for_my_title">Competitive Programming in Bengali</h6>
+    <hr>
+    <div class="text-center">
+        <a href="https://www.facebook.com/du0bl0gger/" target="_blank"><button class="btn btn-success">Visit our Page</button></a>
+    </div>
+</div>
+
+<!-- </div> -->
+
+  <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+    <h3 class="text-centers" id="h1_for_my_title"><b>BDOI Practice Contest-1 Analysis</b></h3>
+    <p class="text-centers" id="author-date-style-post"> Posted by <span id="author-name-on-post">Ahnaf Shahriar Asif</span> on August 21, 2019</p>
+    <hr>
+    <div class="container">
+        <h1 id="problems">Problems</h1>
+
+<ul>
+  <li><a href="#problem1">Problem 1</a></li>
+  <li><a href="#problem2">Problem 2</a></li>
+  <li><a href="#problem3">Problem 3</a></li>
+  <li><a href="#problem4">Problem 4</a></li>
+</ul>
+
+<h2 id="problem-1"><font color="green"><a name="problem1">Problem 1</a></font></h2>
+
+<p><strong>Problem Description:</strong> তোমাকে একটি সংখ্যা দেয়া হবে, তোমাকে “Welcome to BDOI Practice Contest-“ এই স্ট্রিংয়ের সাথে সংখ্যাটি প্রিন্ট করতে হবে। সম্পূর্ন প্রব্লেমটি <a href="/assets/pdf/hello-world-r4-en.pdf">এখানে</a> পাওয়া যাবে।</p>
+
+<p><strong>Problem Solution:</strong> খুবই সহজ সমস্যা। এটার সলিউশন বলার মতো কিছু নেই। এটি দেয়া হয়েছে জাস্ট কয়জন পার্টিসিপেন্ট কন্টেস্ট করতে ঢুকেছে সেটা দেখার জন্য।</p>
+
+<h2 id="problem-2"><font color="green"><a name="problem2">Problem 2</a></font></h2>
+
+<p><strong>Problem Description:</strong> তোমাকে <script type="math/tex">n</script> টি সংখ্যা দেয়া আছে। তোমাকে সংখ্যাগুলোর সকল সাবসেট বেড় করে প্রত্যেকটা সাবসেটের Or Sum বেড় করে সেগুলো যোগ করে <script type="math/tex">10^9+7</script> দিয়ে মড করে আউটপুট দিতে হবে। পুরো প্রব্লেমসেট <a href="/assets/pdf/simple-game-r7-en.pdf">এখানে</a> পাওয়া যাবে।</p>
+
+<p><strong>Problem Solution:</strong> আমরা ধাপে ধাপে সল্ভ করার চেষ্টা করবো। একটা একটা করে সাবটাস্ক দেখি।</p>
+
+<h4 id="subtask-1">Subtask 1</h4>
+
+<p><script type="math/tex">n</script> এর মান এতই ছোট যে আমরা হাতে হাতে হিসাব করে বেড় করে ফেলতে পারি। সর্বোচ্চ <script type="math/tex">2^3-1 = 7</script> টি সাবসেট থাকতে পারে। যেটা হাতে হাতে বেড় করাই যায়।</p>
+
+<h4 id="subtask-2">Subtask 2</h4>
+
+<p><script type="math/tex">n \leq 10^5</script>, যার মানে আমরা সবগুলো সাবসেট বেড় করতে পারবোনা। কিন্তু বলা আছে <script type="math/tex">a_1 = a_2 = ...... = a_n</script>। এবার আমরা চিন্তা করি। আমাদের সবগুলা সাবসেট বেড় করে ওগুলার Or Sum নিতে হবে। তবে আমরা কিন্তু Or এর একটা বৈশিষ্ট জানি, সেটা হলো <script type="math/tex">a \lor a = a</script> . যার মানে এটাও সত্যি যে <script type="math/tex">a \lor a \lor a \lor a ...... = a</script>। তাহলে আমাদের প্রত্যেকটা সাবসেটের Or Sum হবে <script type="math/tex">a_i</script>। মোট সাবসেট থাকতে পারে <script type="math/tex">2^n-1</script> টি।  যার মানে উত্তর দাঁড়াবে <script type="math/tex">\big\{ a_0 \times (2^n-1) \big\} \mod m</script>।</p>
+
+<h4 id="subtask-3">Subtask 3</h4>
+
+<p>$ n \leq 20$, অর্থাৎ, আমরা সহজেই ব্যাকট্র্যাক করে সল্ভ করতে পারি। আমরা সবগুলো সাবসেট বেড় করবো, সবগুলোর Or Sum বেড় করবো, তারপর সেগুলো যোগ করবো। তার মানে ঠিক প্রব্লেমে যা করতে বলা হয়েছে, সেটাই করে ফেলব ব্যাকট্র্যাক করে। কম্প্লেক্সিটি হবে $\mathcal O(n \times 2^n)$। যেহেতু $n \leq 20$, মোটামুটি $20 \times 2^{20} \approx 2 \times 10^7$।</p>
+
+<h4 id="subtask-5">Subtask 5</h4>
+
+<p>আমরা Subtask 4 একটু পরে সল্ভ করবো। সাবটাস্ক 5 তুলনামূলক সহজ, আর Subtask 3 এর সাথে রিলেটেড। এখানে $n \leq 10^5$ কিন্তু $n-1$ টা সংখ্যা একই এবং কেবলমাত্র একটি সংখ্যা আলাদা থাকবে। তার মানে মাত্র $2$ টি আলাদা আলাদা সংখ্যা আছে। ধরে নিচ্ছি $a$ আর $b$। $a$ আছে $n-1$ বার আর $b$ আছে 1 বার। একটু খেয়াল করলে দেখা যাবে, আমরা $n-1$ টি সংখ্যা দিয়ে $2^{n-1}$ টি সাবসেট বানাতে পারবো, যেগুলোর প্রত্যেকটির Or Sum হবে $a$। আবার $b$ কে ব্যাবহার করে আরও $2^{n-1}$ টি সাবসেট বানানো যাবে যেগুলোর Or sum হওয়ার কথা $a \lor b$। আবার ওই $2^{n-1}$ টির মধ্যে একটা সাবসেটে শুধু b থাকবে। তাহলে আমাদের মূল উত্তর হবে <script type="math/tex">\big\{ a \times 2^{n-1} + (a \lor b) \times (2^{n-1}-1) + b \big\} \mod m</script>।</p>
+
+<h4 id="subtask-6">Subtask 6</h4>
+
+<p>আমরা Subtask 5 এর দিকে লক্ষ্য করি। সেখানে দুইটা আলাদা আলাদা সংখ্যা $a,b$ আছে। যেজন্য উত্তর হয়েছে <script type="math/tex">\big\{ a \times 2^{n-1} + (a \lor b) \times 2^{n-1} \big\} \mod m</script>। এখন যদি দুইটার বদলে $a_0,a_1,a_2…..,a_{19}$ থাকে, আমরা কি সল্ভ করতে পারবো?</p>
+
+<p>এবার আমাদের 3 টা Subtask বাকি আছে। Subtask 4, Subtask 7, Subtask 8। এই তিনটা সাবটাস্ক সল্ভ করার জন্য আমাদেরকে আরেকটু গনিত নিয়ে চিন্তাভাবনা করতে হবে।</p>
+
+<h4 id="observation"><font color="#540eb5">Observation:</font></h4>
+
+<p>আমরা আবার শুরুতে চলে যাই। মূলত Or বলতে কি বোঝায়?</p>
+
+<ul>
+  <li>$1 \lor 1 = 1$</li>
+  <li>$1 \lor 0 = 1$</li>
+  <li>$0 \lor 1 = 1$</li>
+  <li>$0 \lor 0 = 0$</li>
+</ul>
+
+<p>এবার ধরা যাক আমরা একটি সাবসেটের সবগুলো সংখ্যার Or বেড় করবো। তাহলে মূলত কী হচ্ছে ? নিচের 4 টি নাম্বারের Or বেড় করার চেষ্টা করে দেখ।</p>
+
+<ul>
+  <li>$5 = 0000101$</li>
+  <li>$7 = 0000111$</li>
+  <li>$8 = 0001000$</li>
+  <li>$3 = 0000011$</li>
+</ul>
+
+<p>একটু চিন্তা করলেই আমরা একটা ব্যাপার ধরতে পারবো। আমাদের যদি ডানদিক থেকে $ith$ ইন্ডেক্সে(0 based index) কোনো একটি বিট 1 থাকে তাহলে সেখানে $2^i$ পরিমান সংখ্যা যোগ হচ্ছে। অর্থাৎ, উপরের লিস্টে i = 3 এ একটি বিট অন আছে, যার মানে আমাদের Or sum এ $2^3$  য‌োগ হবে। যার মানে দাঁড়াচ্ছে, $5 \lor 7 \lor 8 \lor 3 = 2^0+2^1+2^2+2^3 = 15$ কারন ওই সাবসেটে $0,1,2,3$ তম ইন্ডেক্সগুলোতে অন্তত একটি করে বিট অন আছে। এটা তো গেল একটা সাবসেটের সাম। এবার চিন্তা করি, যদি <script type="math/tex">[5,7,8,3 ]</script> একটি সেট হয়, আর এর সবগুলো সাবসেটের অর সাম বেড় করতে বলা হয় তাহলে কি করা যেতে পারে।</p>
+
+<p>উপরের লিস্টের দিকে আবার তাকাই। ধরি ডান থেকে <script type="math/tex">0th</script> ইন্ডেক্সটা। ওখানে দেখা যাচ্ছে 3 টা বিট অন, আর 1 টা বিট অফ। যার মানে দাড়াচ্ছে সেটে কেবলমাত্র একটা সংখ্যা আছে, যার প্রথম বিট $1$ নয়। তার মানে এরকম $2^1-1$ টা সাবসেট পাওয়া যাবে যখন উত্তরের সাথে $2^0$ add হবেনা। বাকি সবগুলো সাবসেটে একবার করে $2^0$ add হবে। আবার $1st$ ইন্ডেক্সের দিকে তাকাই। সেখানে 2 টি সংখ্যার বিট অন, 2 টি সংখ্যার বিট অফ। যার মানে $2^2-1$ টি সাবসেট পাওয়া যাবে, যখন উত্তরের সাথে $2^1$ add হবেনা। আবার এরকম $2^2-1$ টি সাবসেট পাওয়া যাবে যখন উত্তরের সাথে $2^1$ add হবে। এভাবে প্রত্যেক বিটের জন্য কতটুকু করে উত্তরের সাথে যোগ হচ্ছে এটা বেড় করতে পারলেই হবে। আমাদের বিট থাকতে পারে সর্বোচ্চ $\mathcal \log(a_i)$ টি। যার মানে আমাদের মোট কম্প্লেক্সিটি হলো ‌$\mathcal O(n \times \log(max(a_0,a_1……,a_{n-1})))$ । মূলত এই অবজারভেশন দিয়ে Subtask 4,7,8 তিনটাই করে ফেলা যায়। যার মানে এটাই 100 পয়েন্ট তোলার সলিউশন। নিচে কোড দিয়ে দিচ্ছি।</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// check(a,b) is true if bth bit of a is on. Else, it's false. </span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">"%lld"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+   <span class="n">scanf</span><span class="p">(</span><span class="s">"%lld"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">ara</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="n">bigmod</span><span class="p">(</span><span class="mi">2ll</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">mod</span><span class="p">);</span> 
+<span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0ll</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">39</span><span class="p">;</span><span class="n">x</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">// loop till 31 is enough. I'm doing it for extra safety</span>
+    <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+       <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">check</span><span class="p">(</span><span class="n">ara</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">x</span><span class="p">))</span><span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">kaka</span> <span class="o">=</span> <span class="p">(</span><span class="n">total</span><span class="o">-</span><span class="n">bigmod</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">cnt</span><span class="p">,</span><span class="n">mod</span><span class="p">))</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">ans</span><span class="o">+</span><span class="p">(</span><span class="n">kaka</span><span class="o">*</span><span class="n">bigmod</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">mod</span><span class="p">))</span><span class="o">%</span><span class="n">mod</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%lld</span><span class="se">\n</span><span class="s"> "</span><span class="p">,(</span><span class="n">ans</span><span class="o">+</span><span class="n">mod</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="problem-3"><font color="green"><a name="problem3">Problem 3</a></font></h2>
+
+<p><strong>প্রব্লেমটির জন্য <a href="https://www.facebook.com/profile.php?id=100008132494101&amp;ref=br_rs">তাসমীম রেজা</a> ভাইয়াকে ধন্যবাদ। প্রব্লেমটি ভাইয়ার কাছ থেকে নেয়া হয়েছে।</strong></p>
+
+<p><strong>Problem Description:</strong>  তোমাকে m টি তথ্য দেয়া থাকবে। প্রত্যেকবার একজোড়া সংখ্যা দেয়া থাকবে, ধরা যাক a আর b । যার মানে দাঁড়াবে Bob এর a তম ভাতিজা b তম ভাতিজার থেকে বড়। তোমাকে প্রত্যেকটা ইন্স্ট্রাকশন দেয়ার পড়ে বলতে হবে এখন পর্যন্ত পাওয়া তথ্য সত্যি কিনা।  পুরো প্রব্লেমটি <a href="/assets/pdf/bob-and-his-nephews-r3-en.pdf">এখানে</a> পাওয়া যাবে।</p>
+
+<p><strong>Problem Solution:</strong> এই প্রব্লেমটা সল্ভ করার জন্য আমরা একটু গ্রাফ থিওরির ধারনা ব্যাবহার করতে পারি। ধরা যাক Bob এর ভাতিজারা হচ্ছে একেকটা নোড আর একটা করে ইন্স্ট্রাকশন $&lt;a,b&gt;$ দেয়া মানে হলো a  থেকে b তে একটা এজ আছে। a থেকে b তে যাওয়া যাবে। এটার মানে এই না, যে b থেকেও a তে যাওয়া যাবে। তার মানে একটা Directed Graph বানাতে থাকবো আমরা। আর এই গ্রাফটি কখন Invalid হবে? যখন ওই ডিরেক্টেড গ্রাফে এক বা একাধিক সাইকেল থাকবে। কারন একটা সাইকেল থাকা মানে হলো ঘুরে ঘুরে নিজেই নিজের থেকে বড় হয়ে যাওয়া। না বুঝে থাকলে খাতায় এঁকে দেখলেই পরিষ্কার হবে। তাহলে গ্রাফে সাইকেল থাকলেই ডাটা ইনভ্যালিড হয়ে যাচ্ছে। আরও একটা কথা, একবার যদি ডাটা ইনভ্যালিড হয়ে যায়, সেটি কি আর কখনো ভ্যালিড হবে? কারন তোমাকে জিজ্ঞাস করা হয়েছে <strong>এখন পর্যন্ত</strong> দেয়া ডাটাগুলো ভ্যালিড কিনা। তাই তোমার ডাটা একবার ইনভ্যালিড হয়ে গেলে সেটি আর কখনো ভ্যালিড হবেনা। অর্থাৎ আমাদের উত্তর হবে অনেকটা এরকমঃ $…..Yes,Yes,Yes,……No,No,No…$</p>
+
+<p>একবার No হয়ে গেলে পরের সবগুলোই No হবে।</p>
+
+<p>এবার আমরা একটা একটা করে সলভ করার চেষ্টা করি।</p>
+
+<h4 id="subtask-1-1">Subtask 1</h4>
+
+<p>$n$ এর মান খুবই ছোট। আমরা একদম নেইভ ব্রুটফোর্স করে ফেলতে পারি। প্রত্যেকবার ইনপুট নেয়ার সময় $n$ বার DFS চালিয়ে চেক করে দেখব সব ঠিক আছে কিনা। এভাবে যতক্ষন একটা NO না পাচ্ছি ততক্ষন DFS করে দেখতে থাকবো। কম্প্লেক্সিটি $\mathcal O(n^2\times (n+m))$।</p>
+
+<h4 id="subtask-2-1">Subtask 2</h4>
+
+<p>আমরা আগের সাবটাস্কের মতো করে চিন্তা করে কি কোনোভাবে কম্প্লেক্সিটি কমিয়ে $\mathcal O(n^2 + (n+m))$ করা যায় না?</p>
+
+<h4 id="subtask-3-1">Subtask 3</h4>
+
+<p>আমাদের সমস্যা কোথায় হচ্ছে? ডিরেক্টেড গ্রাফে $ \mathcal O(n+m)$ বা লিনিয়ার টাইমে সাইকেল বেড় করতে পারছি না। একবার সাইকেল বেড় করতেই $n$ বার DFS চালাতে হচ্ছে। যার কারনে সমস্যা হচ্ছে। আমরা চাইলে লিনিয়ার টাইমে সাইকেল বেড় করতে পারি। <a href="https://cp-algorithms.com/graph/finding-cycle.html">এখান থেকে</a> দেখে নাও। তাহলে আমাদের Overall কম্প্লেক্সিটি হলো $\mathcal O(n \times (m))$</p>
+
+<h4 id="subtask-4">Subtask 4</h4>
+
+<p>যেহেতু সর্বোচ্চ একটা NO থাকতে পারে, এটা খুব সহজেই বলা যায় যে শুধুমাত্র শেষ ডাটাটিই হয় ভুল হবে, নাইলে সবগুলো সঠিক। তাহলে শুধুমাত্র শেষের বার DFS করলেই তো হয়। একদম নেইভ DFS করলেও $\mathcal O(n^2+nm)$ এ করা যায়।</p>
+
+<h4 id="subtask-5-1">Subtask 5</h4>
+
+<p>এখানে একটি জিনিস লক্ষ্যনীয়। আমাদের উত্তরটিতে প্রথমে বেশ কিছু YES থাকবে, তারপর একবার NO হয়ে গেলে বাকি সব NO। তাহলে আমরা চাইলে সর্বপ্রথম NO খুঁজে বেড় করতে পারি। ব্যাপারটি হলো, ধরা যাক আমরা বেড় করেছি সর্বপ্রথম NO আছে $x$ তম ইন্ডেক্সে। তাহলে $1$ থেকে $x-1$ পর্যন্ত উত্তর হবে YES , আর $x$ থেকে $m$ পর্যন্ত উত্তর হবে NO। এই কাজটি আমরা চাইলে কি বাইনারি সার্চ করে বেড় করতে পারি না ? আমরা যদি অর্ধেক এজ নিয়ে একটা DFS চালাই আর দেখি সাইকেল পাওয়া গেছে তাহলে আর ডানে না গিয়ে বামে সাইকেল খুজঁবো। আর যদি দেখি সাইকেল পাওয়া যাচ্ছে না তাহলে ডানে খুঁজবো। তাহলে আমাদের সর্বোচ্চ $log(m)$ বার DFS করতে হচ্ছে। ওভারঅল কম্প্লেক্সিটি $\mathcal O((n+m) \times \log m)$</p>
+
+<p>কোডটি দিয়ে দিচ্ছিঃ</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">high</span><span class="o">+</span><span class="n">low</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+    <span class="c1">//cout &lt;&lt; " # " &lt;&lt;  mid &lt;&lt; endl;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">adj</span><span class="p">[</span><span class="n">query</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">query</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">find_cycle</span><span class="p">()){</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+        <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">adj</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">clear</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// we will print YES from 1...ans-1 and NO for rest of them. </span>
+</code></pre></div></div>
+
+<h2 id="problem-4"><font color="green"><a name="problem4">Problem 4</a></font></h2>
+
+<p><strong>এই প্রব্লেমটির জন্য <a href="https://www.facebook.com/profile.php?id=100009412935900">শাফিন আলমকে</a> অসংখ্য ধন্যবাদ। প্রব্লেমটি তার বানানো।</strong></p>
+
+<p><strong>Problem Description:</strong> একটি $n \times m$ গ্রিড দেয়া আছে, তোমাকে এমন দুটি পাথ বেড় করতে হবে, যেন পাথ দুটির মধ্যে কোনো কমন নোড না থাকে আর এদের পাথের sum যেন সর্বোচ্চ হয়। তবে প্রথম আর শেষ নোড তো কমন থাকবেই, ওটা আলাদা। সম্পূর্ন প্রব্লেম <a href="/assets/pdf/thinking-about-a-geometry-problem-r1-en.pdf">এখানে</a> পাওয়া যাবে।</p>
+
+<p><strong>Problem Solution:</strong> এটি দেখেই বোঝা যাচ্ছে একটি ডিপি প্রব্লেম। আমরা একটা একটা করে সাবটাস্ক সল্ভ করি।</p>
+
+<h4 id="subtask-1-2">Subtask 1</h4>
+
+<p>$m = 2$, যার মানে মূলত এখানে সর্বোচ্চ দুটি পাথই পাওয়া যাবে, নিচের row আর উপরের row. যার মানে দাড়াচ্ছে গ্রিডের সবগুলো ভ্যালু যোগ করে দিলেই উত্তর হয়ে যাবে।</p>
+
+<h4 id="subtask-2-2">Subtask 2</h4>
+
+<p>এখানে $n$ এর মান এতই কম যে শুধুমাত্র রিকার্শন দিয়ে সল্ভ করা সম্ভব। আমরা একবার গিয়ে আলাদা রাস্তায় ফিরে আসাকে ওভাবে কল্পনা না করে যদি চিন্তা করি, দুইবার উপর থেকে নিচে আলাদা রাস্তায় যাবো, তাহলেই হয়ে যাচ্ছে। আমরা রিকার্শন করে All possible solution বেড় করবো আর তার থেকে সবথেকে বড় sum টাকে নিব। যেহেতু $n,m \leq 9$, এটা কোনোমতে কাজ করবে।</p>
+
+<h4 id="subtask-3-2">Subtask 3</h4>
+
+<p>এখানে $n,m \leq 50$, তাই ডিপি না করে আর উপায় নেই। ডিপি খুবই সহজ। আমরা 4 টা স্টেট রাখবো ডিপিতে। $dp(x_1,y_1,x_2,y_2)$ । এবার জাস্ট আমরা একবার প্রথম পাথে ডানে/নিচে আর দ্বিতীয় পাথে ডানে/নিচে গিয়ে ডিপি করতে থাকবো। আর ম্যাক্সিমাম নিতে থাকবো। আর আমাদের পাথ intersect করলো কিনা সেটাও চেক করা লাগবে। টাইম কম্প্লেক্সিটি $\mathcal O(n^2*m^2) \approx O(n^4)$ আর মেমরি কম্প্লেক্সিটিও $\mathcal O(n^4)$।</p>
+
+<h4 id="subtask-4-1">Subtask 4</h4>
+
+<p>$n,m \leq 100$, যার মানে আমাদের এখানেও $\mathcal O(n^4)$ টাইম কম্প্লেক্সিটিতেও কোনো সমস্যা হওয়ার কথা না। কিন্তু সমস্যা হলো মেমরি কম্প্লেক্সিটিতে। $10^8$ পরিমান মেমরি নেয়া আমাদের পক্ষে সম্ভব নয়। তাই আমাদের স্টেট কমাতে হবে। এখানে একটা লক্ষ্যনীয় ব্যাপার আছে। আমরা প্রত্যেকবার রিকার্শনে প্রথম পাথে এক ডানে বা এক নিচে যাচ্ছি, আবার দ্বিতীয় পাথে এক ডানে বা নিচে যাচ্ছি, যার মানে $x_1+y_1$ আর $x_2+y_2$ সর্বদা সমান। তাহলে আমাদের যদি $x_1,y_1,x_2$ দেয়া থাকে তাহলে আমরা বলতে পারি $y_2 = x_1+y_1-x_2$। তাহলে আমাদের মূলত ডিপিতে আর $y_2$ রাখতে হচ্ছেনা। তাহলে মেমরি কম্প্লেক্সিটি হয়ে গেল $\mathcal O(n^3)$ আর টাইম কম্প্লেক্সিটি $\mathcal O(n^3)$, যা 100 পয়েন্ট পাওয়ার জন্য যথেষ্ট। কোড দিয়ে দিচ্ছি।</p>
+
+<p>‍‍‍</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ll stands for [long long int] </span>
+<span class="n">ll</span> <span class="nf">solve</span><span class="p">(</span><span class="n">ll</span> <span class="n">i</span><span class="p">,</span> <span class="n">ll</span> <span class="n">r</span><span class="p">,</span> <span class="n">ll</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ll</span> <span class="n">y</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">r</span><span class="o">-</span><span class="n">x</span><span class="p">;</span><span class="c1">// here we're calculating y from (i,r,x)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">n</span> <span class="o">||</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="n">m</span> <span class="o">||</span> <span class="n">x</span> <span class="o">&gt;=</span><span class="n">n</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="n">m</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">r</span><span class="o">==</span><span class="n">y</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span><span class="c1">// path intersected </span>
+    <span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">r</span><span class="p">][</span><span class="n">x</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">r</span><span class="p">][</span><span class="n">x</span><span class="p">];</span>
+    <span class="n">ll</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ 
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">solve</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">solve</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span><span class="p">));</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">solve</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">solve</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">));</span>
+ 
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">r</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">ret</span><span class="o">+</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">r</span><span class="p">]</span><span class="o">+</span><span class="n">arr</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>সবাইকে ধন্যবাদ।</p>
+
+    </div>
+    <div class="fb-comments" data-href="https://duoblogger.github.io//2019/07/04/z-function.html" data-width="100%" data-numposts="10"></div>
+</div>
+        </div>
+        <div class="col-md-4">
+            <!-- <div class="affix"> -->
+            <div class="container">
+    <!-- <div class="jumbotron">
+        <a href="fb://page/du0bl0gger/addfan">Like Our Page </a>
+    </div> -->
+    <div class="fb-like" data-href="https://www.facebook.com/du0bl0gger/" data-width="300" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+    <br><hr>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Authors</b></h4><hr> 
+        <a   id="h1_for_my_title" href="https://www.facebook.com/ahnaf.shahriar.7121" target="_blank"><b>Ahnaf Shahriar Asif</b></a>
+        <hr>
+        <a  id="h1_for_my_title" href="https://www.facebook.com/HBKWasi" target="_blank"><b>Munim Hasan Wasi</b></a>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Category</b></h4><hr><!-- <a id="button-tag" href="#Contest analysis" class="btn btn-primary" ></i>&nbsp;Contest analysis&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Contest analysis&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Contest analysis&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/09/26/bdoi-contest-2-analysis.html">BDOI Practice Contest-2 Analysis</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-09-26T00:00:00+06:00">2019-09-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/08/21/bdoi-practice-contest-1.html">BDOI Practice Contest-1 Analysis</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-08-21T00:00:00+06:00">2019-08-21 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Data Structures" class="btn btn-primary" ></i>&nbsp;Data Structures&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Data Structures&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Data Structures&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/04/z-function.html">Z Function</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-04T00:00:00+06:00">2019-07-04 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/26/merge-sort-tree.html">merge Sort Tree (MST)</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-26T00:00:00+06:00">2018-12-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Dynamic Programming" class="btn btn-primary" ></i>&nbsp;Dynamic Programming&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dynamic Programming&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Dynamic Programming&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/29/dp-on-trees.html">Dp on Trees</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-29T00:00:00+06:00">2019-06-29 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/28/basic-dynamic-programming.html">Basic Dynamic Programming</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-28T00:00:00+06:00">2019-06-28 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Geometry" class="btn btn-primary" ></i>&nbsp;Geometry&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Geometry&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Geometry&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/02/convex-hull.html">Convex Hull</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-02T00:00:00+06:00">2019-07-02 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Sorting" class="btn btn-primary" ></i>&nbsp;Sorting&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Sorting&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Sorting&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/26/merge-sort-tree.html">merge Sort Tree (MST)</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-26T00:00:00+06:00">2018-12-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/10/merge-sort.html">merge Sort</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-10T00:00:00+06:00">2018-12-10 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Strings" class="btn btn-primary" ></i>&nbsp;Strings&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Strings&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Strings&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/04/z-function.html">Z Function</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-04T00:00:00+06:00">2019-07-04 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Trees" class="btn btn-primary" ></i>&nbsp;Trees&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Trees&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Trees&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/29/dp-on-trees.html">Dp on Trees</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-29T00:00:00+06:00">2019-06-29 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr></div>
+</div> 
+            <!-- </div>        -->
+        </div>
+  </div>
+
+  <hr>
+<p id="footer-text" class="text-center"> 
+copyright&copy; asifthen00b. All rights reserved.
+<!-- <hr> -->
+</p>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

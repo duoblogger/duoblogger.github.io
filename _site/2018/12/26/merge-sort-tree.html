@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  
+</script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+
+    <title>
+        
+          merge Sort Tree (MST) - duoblogger
+        
+    </title>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="mainNav">
+        <div class="container">
+          <a class="navbar-brand" href="/">DUOBLOGGER</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/about">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/objective">OBJECTIVE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/posts">POSTS</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/authors">Authors</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/tags">CATEGORY</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/contact">CONTACT</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+
+  <!-- <div class="container-fluid"> -->
+
+<div class="jumbotron">
+    <h1 class="text-center" id="h1_for_my_title"><b>Programming Throwdown</b></h1>
+    <h6 class="text-center" id="h1_for_my_title">Competitive Programming in Bengali</h6>
+    <hr>
+    <div class="text-center">
+        <a href="https://www.facebook.com/du0bl0gger/" target="_blank"><button class="btn btn-success">Visit our Page</button></a>
+    </div>
+</div>
+
+<!-- </div> -->
+
+  <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+    <h3 class="text-centers" id="h1_for_my_title"><b>merge Sort Tree (MST)</b></h3>
+    <p class="text-centers" id="author-date-style-post"> Posted by <span id="author-name-on-post">Munim Hasan Wasi</span> on December 26, 2018</p>
+    <hr>
+    <div class="container">
+        <!-- This is also a comment in markdown -->
+
+<p>এই আর্টিকেলটি পড়ার পূর্বশর্ত: সেগমেন্ট ট্রি, মার্জ সর্ট এলগোরিদম, বাইনারী সার্চ সম্পর্কে ধারণা থাকতে হবে। না থাকলে এই লিংকগুলো থেকে শিখে নাও:-</p>
+
+<p><a href="http://www.shafaetsplanet.com/?p=1557">সেগমেন্ট ট্রি</a></p>
+
+<p><a href="https://duoblogger.github.io/2019/06/26/merge-sort.html">মার্জ সর্ট</a></p>
+
+<p><a href="http://www.shafaetsplanet.com/?p=2279">বাইনারী সার্চ</a></p>
+
+<p><span style="color:#02b300">টার্গেট প্রবলেম:</span> আমাদের কাছে একটা অ্যারে আছে। আমাদেরকে কিছু প্রশ্ন করা হবে অ্যারেটা সম্পর্কে। আমাদের সে প্রশ্নগুলোর উত্তর দিতে হবে। প্রশ্নগুলো ৩ টি সংখ্যা <script type="math/tex">l</script>, <script type="math/tex">r</script> ও <script type="math/tex">k</script> দেওয়া হবে। আমাদের বলতে হবে অ্যারেটির <script type="math/tex">l</script> থেকে <script type="math/tex">r</script> এর মধ্যে <script type="math/tex">k</script> এর চেয়ে ছোট কয়টি সংখ্যা আছে।</p>
+
+<p><span style="color:#02b300">সলিউশান:</span> এটা সলভ করার জন্য আমাদের মনে প্রথমে যে উপায়টা আসতে পারে সেটা হচ্ছে প্রথমে আমরা একটা আলাদা অ্যারেতে এই রেঞ্জ এর সবগুলা সংখ্যা কপি করব, তারপর সর্ট করব, তারপর দেখব কয়টা সংখ্যা k এর চেয়ে ছোট। এভাবে আমরা চাইলে বের করতে পারব। তবে এতে সমস্যা হচ্ছে অনেক সময় লাগবে। প্রতিবার সর্ট করতে ওরস্ট কেস এ টাইম কম্প্লেক্সিটি  <script type="math/tex">O(log(n))</script>  হবে । তাই <script type="math/tex">q</script>  টা কুয়েরি হলে মোট টাইম কম্প্লেক্সিটি <script type="math/tex">O(qnlog(n))</script> হবে। তাই এটা মোটামুটি ধরণের বড় <script type="math/tex">q</script> এবং <script type="math/tex">n</script> এর জন্যও অনেক সময় নষ্ট করবে। এটা হলে তো হবে না। এটার টাইম কম্প্লেক্সিটি কমাতে হবে। এজন্য আমরা সেগমেন্ট ট্রির সাহায্য নিব। মূল আইডিয়াটা হচ্ছে সেগমেন্ট ট্রির প্রতিটা নোড এ একটা সংখ্যা সেভ না করে, ওই রেঞ্জ এর সবগুলো সংখ্যা সর্টেড আকারে সেভ করে রাখা হবে।  এটার জন্য আমরা মার্জ সর্ট এলগোরিদম এর সাহায্য নেব। মার্জ সর্ট করার সময় আমরা যেভাবে অ্যারেটাকে দুই ভাগে ভাগ করে ফেলি এবং ভাগ করতেই থাকি যতক্ষণ না একটা সংখ্যায় নেমে আসে, এভাবেই কিন্তু আমরা সেগমেন্ট ট্রিও বানাই। সেগমেন্ট ট্রি বানানোর সময়ও আমরা রেঞ্জটাকে দুই ভাগে ভাগ করে ফেলি এবং যতক্ষণ পর্যন্ত না শেষমেশ একটা সংখ্যায় নেমে আসে ততক্ষণ পর্যন্ত ভাগ করতেই থাকি। সেগমেন্ট ট্রি এবং মার্জ সর্ট এর অ্যারে ভাগ করার পদ্ধতিতে আমরা কিন্তু একটা মিল দেখতে পাচ্ছি। এই মিলটাকে ব্যবহার করে আমরা “মার্জ সর্ট” এবং “সেগমেন্ট ট্রি” এর মার্জ করে “মার্জ সর্ট ট্রি” বানাবো। এটা হচ্ছে একটা সেগমেন্ট ট্রি যার প্রত্যেকটা নোডে ওই রেঞ্জ এ মার্জ সর্ট করার পর যে সর্টেড অ্যারেটা তৈরি হয়েছে সেটা থাকবে। এটাকেই মার্জ সর্ট ট্রি বলা হয়। খুবই বেসিক ধারণা। মার্জ সর্ট এবং সেগমেন্ট ট্রি উভয়টা জানা থাকলে মার্জ সর্ট ট্রি বুঝা কোনো ব্যাপার ই না। 🙂</p>
+
+<p><span style="color:#02b300">ইমপ্লিমেন্টেশন:</span> ইমপ্লিমেন্টেশনের জন্য আমরা প্রথমে একটি ২ডি ভেক্টর নিব। বিল্ড ফাংশানটা সাধারণ সেগমেন্ট ট্রির বিল্ড ফাংশান এর মতোই হবে। শুধু রেঞ্জ একটি সংখ্যায় নেমে আসলে আমরা ভেক্টরে ভ্যালু এসাইন না করে পুশ করে দিব। আর শেষ লাইনে প্যারেন্ট এর ভেক্টর তৈরি করার জন্য <script type="math/tex">merge()</script> ফাংশনটি ব্যবহার করব। এটার কাজ তোমরা মার্জ সর্ট এলগোরিদম শিখার সময়ই জেনে এসেছ। 🙂 তাহলেই বিল্ড ফাংশানের কাজ শেষ। এবার আসে আমরা কুয়েরি কিভাবে করব। কুয়েরি করার জন্য আমরা সাধারণ কুয়েরির মতো রেঞ্জটাকে ২ এর পাওয়ারের অনেকগুলা রেঞ্জ এ ভেঙ্গে ফেলব। এ রেঞ্জ এর প্রত্যেকটা নোডের ভেক্টরই কিন্তু আগে থেকে সর্টেড। তাই আমরা বাইনারী সার্চ করে প্রথম সংখ্যাটা বের করব যেটা কুয়েরিতে প্রদত্ত সংখ্যাটার চেয়ে বড়। এটার আগের সবগুলা সংখ্যার সংখ্যাই হবে আমাদের কাঙ্ক্ষিত। এবার আমরা সবগুলা রেঞ্জ এর জন্য এই “সংখ্যাগুলোর সংখ্যার” (মানে কয়টা সংখ্যা আছে এমন)  যোগফল বের করে ফেলব। তাহলে এটাই হবে আমাদের কাঙ্ক্ষিত উত্তর।</p>
+
+<p>নিচে এটার সি++ এর কোড দেয়া হল:</p>
+
+<p>বিল্ড ফাংশন:</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">tree</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">N</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="kt">void</span> <span class="nf">build_tree</span><span class="p">(</span> <span class="kt">int</span> <span class="n">cur</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">l</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">r</span> <span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span> <span class="n">l</span><span class="o">==</span><span class="n">r</span> <span class="p">)</span>
+     <span class="p">{</span>
+            <span class="n">tree</span><span class="p">[</span><span class="n">cur</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span> <span class="n">a</span><span class="p">[</span> <span class="n">l</span> <span class="p">]</span> <span class="p">);</span>
+            <span class="k">return</span> <span class="p">;</span>
+     <span class="p">}</span>
+     <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+     <span class="n">build_tree</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">cur</span><span class="p">,</span> <span class="n">l</span> <span class="p">,</span> <span class="n">mid</span> <span class="p">);</span> <span class="c1">// Build left tree </span>
+     <span class="n">build_tree</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">cur</span><span class="o">+</span><span class="mi">1</span> <span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span> <span class="p">,</span> <span class="n">r</span> <span class="p">);</span> <span class="c1">// Build right tree</span>
+     <span class="n">tree</span><span class="p">[</span><span class="n">cur</span><span class="p">]</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span> <span class="n">tree</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">cur</span><span class="p">]</span> <span class="p">,</span> <span class="n">tree</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">cur</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">);</span> <span class="c1">//Merging the two sorted arrays</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>কুয়েরি ফাংশন:</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">query</span><span class="p">(</span> <span class="kt">int</span> <span class="n">cur</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+      <span class="k">if</span><span class="p">(</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">||</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="p">)</span>
+      <span class="p">{</span>
+           <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//out of range</span>
+      <span class="p">}</span>
+      <span class="k">if</span><span class="p">(</span> <span class="n">x</span><span class="o">&lt;=</span><span class="n">l</span> <span class="o">&amp;&amp;</span> <span class="n">r</span><span class="o">&lt;=</span><span class="n">y</span> <span class="p">)</span>
+      <span class="p">{</span>
+            <span class="c1">//Binary search over the current sorted vector to find elements smaller than K</span>
+            <span class="k">return</span> <span class="n">upper_bound</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="n">cur</span><span class="p">].</span><span class="n">begin</span><span class="p">(),</span><span class="n">tree</span><span class="p">[</span><span class="n">cur</span><span class="p">].</span><span class="n">end</span><span class="p">(),</span><span class="n">K</span><span class="p">)</span><span class="o">-</span><span class="n">tree</span><span class="p">[</span><span class="n">cur</span><span class="p">].</span><span class="n">begin</span><span class="p">();</span>
+      <span class="p">}</span>
+      <span class="kt">int</span> <span class="n">mid</span><span class="o">=</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+      <span class="k">return</span> <span class="n">query</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">cur</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">mid</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="n">query</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">cur</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>কম্প্লেক্সিটি এনালাইসিস:</p>
+
+<p>বিল্ড করার টাইম কম্প্লেক্সিটি হবে <script type="math/tex">O(nlogn)</script>। এটা আমরা সহজেই অনুধাবন করতে পারি। এখন আসল প্রশ্ন হচ্ছে মেমোরি কম্প্লেক্সিটি কত হবে। আমরা একটু ভাবলেই বুঝতে পারবো যে মেমোরি কম্প্লেক্সিটিও <script type="math/tex">O(nlogn)</script> হবে। কারণ একটা সংখ্যা সর্বোচ্চ <script type="math/tex">logn</script> সংখ্যাক বার ট্রি তে থাকতে পারে (ট্রি এর হাইট)।</p>
+
+<p>কুয়েরি ফাংশানের কম্প্লেক্সিটি <script type="math/tex">O(log^{2} n)</script> হবে। কারণ একটা রেঞ্জ কে সর্বোচ্চ <script type="math/tex">logn</script> টা ভাগে ভাগ করা যায়। আর প্রতিটা রেঞ্জ এর জন্য একবার করে বাইনারী সার্চ করা লাগবে, যার কম্প্লেক্সিটি <script type="math/tex">logn</script>। তাই মোট কম্প্লেক্সিটি হবে <script type="math/tex">O(log^{2} n)</script> 🙂</p>
+
+<p>প্র্যাকটিস প্রবলেমস:</p>
+
+<p><a href="http://codeforces.com/contest/785/problem/E">Anton and Permutation</a>
+<a href="https://www.spoj.com/problems/KQUERYO/">KQUERYO</a>
+এর মাধ্যমেই আমার মার্জ সর্ট ট্রি নিয়ে বিরক্তিকর ক্যাচক্যাচানি শেষ হল।  🙂</p>
+
+
+    </div>
+    <div class="fb-comments" data-href="https://duoblogger.github.io//2018/12/10/merge-sort.html" data-width="100%" data-numposts="10"></div>
+</div>
+        </div>
+        <div class="col-md-4">
+            <!-- <div class="affix"> -->
+            <div class="container">
+    <!-- <div class="jumbotron">
+        <a href="fb://page/du0bl0gger/addfan">Like Our Page </a>
+    </div> -->
+    <div class="fb-like" data-href="https://www.facebook.com/du0bl0gger/" data-width="300" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+    <br><hr>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Authors</b></h4><hr> 
+        <a   id="h1_for_my_title" href="https://www.facebook.com/ahnaf.shahriar.7121" target="_blank"><b>Ahnaf Shahriar Asif</b></a>
+        <hr>
+        <a  id="h1_for_my_title" href="https://www.facebook.com/HBKWasi" target="_blank"><b>Munim Hasan Wasi</b></a>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Category</b></h4><hr><!-- <a id="button-tag" href="#Contest analysis" class="btn btn-primary" ></i>&nbsp;Contest analysis&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Contest analysis&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Contest analysis&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/09/26/bdoi-contest-2-analysis.html">BDOI Practice Contest-2 Analysis</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-09-26T00:00:00+06:00">2019-09-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/08/21/bdoi-practice-contest-1.html">BDOI Practice Contest-1 Analysis</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-08-21T00:00:00+06:00">2019-08-21 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Data Structures" class="btn btn-primary" ></i>&nbsp;Data Structures&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Data Structures&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Data Structures&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/04/z-function.html">Z Function</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-04T00:00:00+06:00">2019-07-04 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/26/merge-sort-tree.html">merge Sort Tree (MST)</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-26T00:00:00+06:00">2018-12-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Dynamic Programming" class="btn btn-primary" ></i>&nbsp;Dynamic Programming&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dynamic Programming&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Dynamic Programming&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/29/dp-on-trees.html">Dp on Trees</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-29T00:00:00+06:00">2019-06-29 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/28/basic-dynamic-programming.html">Basic Dynamic Programming</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-28T00:00:00+06:00">2019-06-28 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Geometry" class="btn btn-primary" ></i>&nbsp;Geometry&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Geometry&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Geometry&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/02/convex-hull.html">Convex Hull</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-02T00:00:00+06:00">2019-07-02 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Sorting" class="btn btn-primary" ></i>&nbsp;Sorting&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Sorting&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Sorting&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/26/merge-sort-tree.html">merge Sort Tree (MST)</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-26T00:00:00+06:00">2018-12-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/10/merge-sort.html">merge Sort</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-10T00:00:00+06:00">2018-12-10 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Strings" class="btn btn-primary" ></i>&nbsp;Strings&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Strings&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Strings&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/04/z-function.html">Z Function</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-04T00:00:00+06:00">2019-07-04 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Trees" class="btn btn-primary" ></i>&nbsp;Trees&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Trees&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Trees&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/29/dp-on-trees.html">Dp on Trees</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-29T00:00:00+06:00">2019-06-29 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr></div>
+</div> 
+            <!-- </div>        -->
+        </div>
+  </div>
+
+  <hr>
+<p id="footer-text" class="text-center"> 
+copyright&copy; asifthen00b. All rights reserved.
+<!-- <hr> -->
+</p>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

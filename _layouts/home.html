@@ -1,0 +1,23 @@
+---
+layout: main
+---
+
+<div class="container">
+    <!-- <div class="jumbotron"> -->
+    {% for post in site.posts limit: 7 %}
+    <a id="post-list-title" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+        <h2 ><b>{{ post.title }}</b></h2>
+    </a>
+    <p id="author-date-style-home"> Posted by <span id="author-name-on-home-page">{{ post.author }}</span> on {{ post.date | date: '%B %d, %Y' }}</p>
+    {% if post.subtitle %}
+        <h6 id="subtitle" class="post-subtitle">{{ post.subtitle }}<a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">.....[Read Details]</a></h6>
+        {% else %}
+        <h6 id="subtitle" class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 100 }}<a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">.....[Read Details]</a></h6>
+        {% endif %}
+    <hr>
+     {% endfor %}
+     <!-- <div class="clearfix"> -->
+        <a  href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
+    <!-- </div> -->
+    <br><br>
+</div>

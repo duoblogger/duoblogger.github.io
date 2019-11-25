@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  
+</script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+
+    <title>
+        
+          BDOI Practice Contest-2 Analysis - duoblogger
+        
+    </title>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="mainNav">
+        <div class="container">
+          <a class="navbar-brand" href="/">DUOBLOGGER</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/about">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/objective">OBJECTIVE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/posts">POSTS</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/authors">Authors</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/tags">CATEGORY</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/contact">CONTACT</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+
+  <!-- <div class="container-fluid"> -->
+
+<div class="jumbotron">
+    <h1 class="text-center" id="h1_for_my_title"><b>Programming Throwdown</b></h1>
+    <h6 class="text-center" id="h1_for_my_title">Competitive Programming in Bengali</h6>
+    <hr>
+    <div class="text-center">
+        <a href="https://www.facebook.com/du0bl0gger/" target="_blank"><button class="btn btn-success">Visit our Page</button></a>
+    </div>
+</div>
+
+<!-- </div> -->
+
+  <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+    <h3 class="text-centers" id="h1_for_my_title"><b>BDOI Practice Contest-2 Analysis</b></h3>
+    <p class="text-centers" id="author-date-style-post"> Posted by <span id="author-name-on-post">Ahnaf Shahriar Asif</span> on September 26, 2019</p>
+    <hr>
+    <div class="container">
+        <h2 id="problem-1--very-hard-problem">Problem 1 : Very Hard Problem</h2>
+
+<p><a href="/html-statements/Statements.html">Problem Description</a></p>
+
+<h3 id="solution">Solution:</h3>
+
+<p>এর সমাধানটি একদম সহজ। আমাকে $f(n)$ দেয়া আছে, আমাকে $n$ বেড় করতে হবে। আমরা ফাংশনের দিকে তাকালেই বুঝতে পারবো। এটি আসলে $1+2+3+….+n$ করছে। তার মানে হলো $f(x)$ হলো 1 থেকে n পর্যন্ত সংখ্যাগুলোর যোগফল। তাহলে আমরা এটাও বলতে পারি $\displaystyle{f(x) = \frac{x(x+1)}{2}}$। এবার আমাদোর জন্য সমস্যাটি সমাধান করা সহজ। একটু বীজগনিত খাটালেই এরকম হবেঃ</p>
+
+<script type="math/tex; mode=display">n^2 + n = 2f(x)</script>
+
+<script type="math/tex; mode=display">n^2 + n -2f(x) = 0</script>
+
+<p>এবার দ্বিঘাত সমীকরন ব্যাবহার করে x এর মান বেড় করলেই হবে। যদি পাওয়া না যায় তাহলে উত্তর -1। মজার ব্যাপার হলো এটি আমি বাইনারি সার্চ দিয়ে সমাধান করেছিলাম। অর্থাৎ, n এর উপর বাইনারি সার্চ করে বেড় করেছি, কোন $n$ এর জন্য $f(n)$ এর মান ইনপুটের সমান হয়।</p>
+
+<h2 id="problem-2-infinity-war-without-avengers">Problem 2: Infinity war without Avengers!</h2>
+
+<!-- [Problem Description](https://codeforces.com/group/wUWXh1K7Gk/contest/253497/problem/B) -->
+<p><a href="/assets/pdf/bdoi-2-prob-B.pdf"> Problem Statement </a></p>
+
+<p>আমি এটা নিয়ে কিছু বলতে চাই না, <a href="https://www.youtube.com/watch?v=pwpOC1dph6U&amp;t=4s">এই ভিডিওটা</a> দেখে নিলেই হবে!</p>
+
+<h2 id="problem-3-back-to-ssc-maths">Problem 3: Back to SSC Maths</h2>
+
+<!-- [Problem Description](https://codeforces.com/group/wUWXh1K7Gk/contest/253497/problem/C) -->
+<p><a href="/assets/pdf/bdoi-2-problem-c.pdf"> Problem Statement </a></p>
+
+<p>সমস্যাটির সমাধান নামের মধ্যেই দেয়া আছে। এসএসসি সাধারন গনিত বইয়ের প্রথম চ্যাপ্টার ভালো করে পড়তে হবে। তবে ওখানে যে নিয়ম দেয়া আছে সেটা কোথা থেকে আসলো সেটা জানতে তোমাকে গুনোত্তর ধারা সম্পর্কে জানতে হবে। এজন্য এসএসসি হাইয়ার ম্যাথ বইয়ের গুনোত্তর ধারা সম্পর্কে পড়ে নিলেই পারার কথা। একটা হিন্ট দিয়ে দেই।</p>
+
+<script type="math/tex; mode=display">14.3333333333.....</script>
+
+<script type="math/tex; mode=display">= 14+0.3+0.03+0.003+......</script>
+
+<p>এভাবে একটা গুনোত্তর ধারা পাওয়া যাবে। আর সেটা সল্ভ করতে পারলেই হয়ে যাবে।</p>
+
+<h2 id="problem-4-four-numbers">Problem 4: Four Numbers</h2>
+
+<!-- [Problem Description](https://codeforces.com/group/wUWXh1K7Gk/contest/253497/problem/D) -->
+<p><a href="/assets/pdf/bdoi-2-prob-d.pdf"> Problem Statement </a></p>
+
+<p>এই প্রব্লেমটা খুব দারুন। সলিউশনটাও ভালো। অনেকটা greedy সলিউশন। আমাদের প্রথম আইডিয়া হলো, $A+B$ কে maximize করতে হবে আর $C-D$ কে minimized করতে হবে। তবে $C-D$ কে নিগেটিভ করা যাবেনা, তাহলে উত্তর নিগেটিভ চলে আসবে, যা maximum হবেনা। এবার এই প্রব্লেমটা $\mathcal O(n^2)$ বা $\mathcal O(n^2  \log n)$ এ সহজেই সমাধান করা যায়। যেকোন একটা পাশ ফিক্স করে আরেকটা লুপ চালিয়ে করা যায় আরকি। আমরা দেখি $\mathcal O(N)$ এ কীভাবে করা যায়।</p>
+
+<p>আমরা লিস্ট টাকে decreasing অর্ডারে সর্ট করে ফেলি। তাহলে আমরা শুরুতে $A = a_1$ আর $B = a_2$ ধরে নিতে পারবো। কারন প্রথম দুটি সংখ্যা সবথেকে বড়। এবার এই দুটিকে ফিক্স করার পর বাকি সংখ্যাগুলো থেকে আমাদেরকে এমন একজোড়া সংখ্যা বেড় করতে হবে, যাদের মধ্যে পার্থক্য সবথেকে কম। এখন লক্ষ্যনীয় যে, কখনোই একটি সংখ্যার সাথে তার পাশের সংখ্যার পার্থক্য, তার ২-৩ ঘর পরের সংখ্যার পার্থক্যের থেকে বেশি হতে পারবেনা। চিন্তা করলেই বোঝা যাবে। তাই আমরা শুধুমাত্র পাশাপাশি সংখ্যা নিয়ে চেক করবো এবং $a_i,a_{i+1}$ বেড় করবো যেন $\abs{a_i - a_{i+1}}$ minimized হয়। তাহলেই হয়ে যাবে। তবে এটাই কি সঠিক সলিউশন দিবে? নিচের কেসটির কথা চিন্তা করি।</p>
+
+<script type="math/tex; mode=display">13 \ \ \ 12 \ \ \ 10 \ \ \ 5 \ \ \ 2</script>
+
+<p>এখানে আমরা যদি 13+12 নিয়ে ফেলি, আর ওপাশে মিনিমাম ডিফারেন্স পাবো 3, তাহলে উত্তর হবে $\frac{25}{3} = 8.33333..$ কিন্তু আমরা যদি C = 13, D = 12 , A = 10, B = 5 নেই তাহলে আমরা পাবো 15, যা বেটার সলিউশন। তাহলে কী করা যায়? আসলে আমরা যেটা করছি, সেটা হলো $A = a_1$ আর $B = a_2$ ফিক্স করে দিচ্ছি, যেজন্য কিছু অপটিমাল সলিউশন মিস হয়ে যাচ্ছে। তবে খুব বেশি পরিমান কেস কিন্তু আর হ্যান্ডেল করার দরকার নেই। আমাদের শুধু দেখতে হবে $a_1$ বা $a_2$ এর কোনো একটি বা দুটিই C বা D হিসেবে কাজে লাগানো যাবে কিনা। কারন ওই কেস দুটি ছাড়া বাকি সবই হ্যান্ডেল করা হয়ে গেছে। এখন আমরা আরো দুটি জিনিসহ দেখলেই হয়ে যাবে। প্রথমত দেখবো $a_1$ কে C আর $a_2$ কে D ধরে। যদি সেটা ধরি, তাহলে $A,B$ কোনটা কোনটা হবে? যেহেতু লিস্ট ডিক্রিসিং অর্ডারে সাজানো, তাই সবথেকে বেটার হবে $A = a_3, B = a_4$ ধরলে, কারন এই দুটি ছাড়া A+B ম্যাক্সিমাইজ করার উপায় নেই। তার মানে, $A = a_3 , B = a_4 , C = a_1 , D = a_2$ নিয়ে দেখতে হবে একটা। আরেকটা মাত্র কেইস বাকি আছে। সেটি কি একটু চিন্তা করো। আমরা $a_1$ আর  $a_2$ এর যেকোন একটিকে C বা D তে দিব, আর আরেকটিকে A বা B তে। এবার আবার ওই কথাই, পাশাপাশি জোড়া ছাড়া C,D দেয়া লাভজনক না, তাই আমরা এবার $a_2 = C ,  a_3 = D$ আর $a_1 = A , a_4 = B$ নিয়ে দেখবো কি পাওয়া যায়। আর এই ৩ টা কেইস হ্যান্ডেল করলেই হয়ে যাবে। আর কোন অপটিমাল কেইস পাওয়া সম্ভব না। সলিউশন নিচে দিয়ে দিচ্ছি, ক্লিয়ার করার জন্য:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">ara</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="n">sort</span><span class="p">(</span><span class="n">ara</span><span class="p">,</span><span class="n">ara</span><span class="o">+</span><span class="n">n</span><span class="p">,</span><span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="kt">int</span> <span class="n">upore</span> <span class="o">=</span> <span class="n">ara</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">ara</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">mn</span> <span class="o">=</span> <span class="mi">1000000000</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">mn</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">mn</span><span class="p">,</span><span class="n">ara</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">ara</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="kt">double</span> <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">upore</span><span class="o">*</span><span class="mf">1.0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">mn</span><span class="o">*</span><span class="mf">1.</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">one</span> <span class="o">=</span> <span class="p">(</span><span class="n">ara</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mf">1.</span><span class="o">+</span><span class="n">ara</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mf">1.</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ara</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">ara</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="mf">1.0</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">two</span> <span class="o">=</span> <span class="p">(</span><span class="n">ara</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">1.</span><span class="o">+</span><span class="n">ara</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mf">1.</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ara</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ara</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">*</span><span class="mf">1.0</span><span class="p">;</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">max</span><span class="p">(</span><span class="n">one</span><span class="p">,</span><span class="n">two</span><span class="p">));</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">setprecision</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="problem-5--segment-union">Problem 5 : Segment Union</h2>
+<!-- [Problem Description](...)
+ -->
+<p><a href="/assets/pdf/bdoi-2-prob-e.pdf"> Problem Statement </a></p>
+
+<p>এই প্রব্লেমটি অনেকভাবে সমাধান করা যায়। প্রথম সাবটাস্কের জন্য সোজা লুপ। পরেরটার জন্য যেহেতু একটা মাত্র কুয়েরি, তাই একটা প্রিফিক্স অ্যারের মতো কিছু একটা রেখে, $\mathcal O(1)$ এ আাপডেট করে একদম শেষে কুয়েরির উত্তর দেয়া যায়। তার পরের সাবটাস্কটি করার জন্য অনেক কিছু করা যায়। একটা সেগমেন্ট ট্রি রাখা যায়, <code class="highlighter-rouge">sqrt Decomposition</code> করা যায়, $log(n)$ এ করার মতো কিছু <code class="highlighter-rouge">range minimum query</code> ধরনের জিনিসপত্র দিয়ে এটি সল্ভ করা যায়, এবং বলা যায় এটি অনেকটা well known, non-trivial problem। আর শেষের সাবটাস্কে $l,r \leq 10^9$, অর্থাৎ, সেগমেন্ট ট্রিতে তুমি স্বাভাবিক ভাবে করতে পারবেনা। তবে তুমি চাইলে অ্যারে এর বদলে map ব্যাবহার করতে পারো। তাহলে $\mathcal O(\log^2 n)$ পার কুয়েরিতে সল্ভ করতে পারবে। <code class="highlighter-rouge">unordered_map</code> দিয়ে আসলে এভারেজে $\mathcal O(\log n)$ পার কুয়েরিতে সল্ভ করা যায়। তবে এটা সমাধান করার একটি সুন্দর পদ্ধতি আছে, সেটা হলো <code class="highlighter-rouge">Implicit Segment Tree</code>. এটি খুব সুন্দর একটা জিনিস, এখানে আমরা নোড তখনই বানাবো, যখন আমাদের নোড বানানোর দরকার পড়বে, ডাইনামিক্যালি মেমরি অ্যালোকেট করবো আরকি। এটি ব্যাখ্যা করতে গেলে অনেক কিছুই করতে হবে। তবে আমার মনে আছে, তাসমিম ভাইয়ার কাছ থেকে <code class="highlighter-rouge">Implicit Segtree</code> এর একটা কোড নিয়ে আমি বসে বসে দেখে দেখে বুঝে গিয়েছিলাম কি হচ্ছে ব্যাপারটা। আসলে খুবই সোজাসাপ্টা কোড। আমি নিচে দিয়ে দিচ্ছি, আশা করি সবাই বুঝতে পারবে।</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+ 
+<span class="k">const</span> <span class="kt">int</span> <span class="n">maxn</span> <span class="o">=</span> <span class="mi">1000000006</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">maxval</span> <span class="o">=</span> <span class="n">maxn</span><span class="p">;</span>
+ 
+<span class="k">struct</span> <span class="n">node</span><span class="p">{</span>
+ 
+	<span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+	<span class="kt">bool</span> <span class="n">done</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+	<span class="n">node</span> <span class="o">*</span><span class="n">left</span><span class="p">;</span>
+	<span class="n">node</span> <span class="o">*</span><span class="n">right</span><span class="p">;</span>
+	<span class="n">node</span><span class="p">(</span><span class="n">node</span> <span class="o">*</span><span class="n">l</span> <span class="o">=</span> <span class="nb">NULL</span> <span class="p">,</span> <span class="n">node</span> <span class="o">*</span><span class="n">r</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">,</span> <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="kt">bool</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">false</span><span class="p">)</span><span class="o">:</span>
+		<span class="n">left</span><span class="p">(</span><span class="n">l</span><span class="p">),</span><span class="n">right</span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="n">val</span><span class="p">(</span><span class="n">s</span><span class="p">),</span><span class="n">done</span><span class="p">(</span><span class="n">d</span><span class="p">){}</span>
+	
+	<span class="n">node</span> <span class="o">*</span><span class="n">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">L</span><span class="p">,</span><span class="kt">int</span> <span class="n">R</span> <span class="p">,</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">done</span> <span class="n">or</span> <span class="n">L</span> <span class="o">&gt;</span> <span class="n">r</span> <span class="n">or</span> <span class="n">R</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">)</span><span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">L</span> <span class="n">and</span> <span class="n">R</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">){</span>
+			<span class="n">val</span> <span class="o">=</span> <span class="n">R</span><span class="o">-</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+			<span class="n">done</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+			<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="n">R</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">left</span><span class="p">)</span><span class="n">left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">node</span><span class="p">();</span>
+		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">right</span><span class="p">)</span><span class="n">right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">node</span><span class="p">();</span>
+		<span class="n">left</span> <span class="o">-&gt;</span> <span class="n">update</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">mid</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+		<span class="n">right</span> <span class="o">-&gt;</span> <span class="n">update</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+ 
+		<span class="n">val</span> <span class="o">=</span> <span class="n">left</span><span class="o">-&gt;</span><span class="n">val</span><span class="o">+</span><span class="n">right</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">;</span>
+		<span class="n">val</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="n">R</span><span class="o">-</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+		<span class="k">return</span> <span class="k">this</span><span class="p">;</span> 
+	<span class="p">}</span>
+	<span class="kt">int</span> <span class="n">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">L</span><span class="p">,</span><span class="kt">int</span> <span class="n">R</span><span class="p">,</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">L</span> <span class="o">&gt;</span> <span class="n">r</span> <span class="n">or</span> <span class="n">R</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">)</span><span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">L</span> <span class="n">and</span> <span class="n">R</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">)</span><span class="k">return</span> <span class="n">val</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="n">R</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="n">left</span><span class="o">-&gt;</span><span class="n">query</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">mid</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">right</span><span class="p">)</span><span class="n">y</span> <span class="o">=</span> <span class="n">right</span><span class="o">-&gt;</span><span class="n">query</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+		<span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span><span class="o">*</span><span class="n">root</span><span class="p">;</span>
+ 
+ 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">q</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">;</span>
+	<span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">q</span><span class="p">);</span>
+	<span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">node</span><span class="p">();</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="o">--</span><span class="p">){</span>
+		<span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+		<span class="n">scanf</span><span class="p">(</span><span class="s">" %c"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">ch</span><span class="p">);</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">ch</span> <span class="o">==</span> <span class="sc">'+'</span><span class="p">){</span>
+			<span class="n">scanf</span><span class="p">(</span><span class="s">"%d%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">l</span><span class="p">,</span><span class="o">&amp;</span><span class="n">r</span><span class="p">);</span>
+			<span class="n">root</span> <span class="o">=</span> <span class="n">root</span> <span class="o">-&gt;</span> <span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">maxn</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">query</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">maxn</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">maxn</span><span class="p">));</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="problem-6-hrsiam-attends-parties">Problem 6: HrSiam Attends Parties</h2>
+<p><a href="/assets/pdf/bdoi-2-prob-f.pdf"> Problem Statement </a></p>
+
+<p>এটি মনে হয় সবথেকে সহজ সমস্যা। a,b ইনপুট, $ceiling \bigg(\displaystyle{\frac{a}{b}} \bigg)$ আউটপুট।</p>
+
+<h2 id="provlem-7-k-consecutive">Provlem 7: K-consecutive</h2>
+<p><a href="/assets/pdf/bdoi-2-prob-g.pdf"> Problem Statement </a></p>
+
+<p>এই প্রব্লেমটার মূল সলিউশন ডিপি। প্রথম সাবটাস্কে k = 1, যার মানে সলিউশন টা হবে $m \times (m-1)^{n-1} \mod m$। পরের সাবটাস্কে উরাধুরা ব্রুটফোর্স দিয়েই করে ফেলা যাবে, constraints খুব ছোট। এরপর ওই উরাধুরা ব্রুটফোর্সে $dp[ n ] [ k ] [m ]$ টাইপের কিছু একটা রেখে দিলে মোটামুটি পরের সাবটাস্ক হয়ে যাবে। এরপর শেষের সাবটাস্কে সমস্যা হলো $5000^3$ পরিমান মেমরি নেয়া পসিবল না। তাই আমাদের একটা ডাইমেনশন কমাতে হবে। আমরা চিন্তা করি, আমাদের কাছে কত ধরনের খাবার আছে, অথবা কোন খাবার নিয়ে বর্তমানে কাজ করছি, সেটা ততটা গুরুত্বপূর্ন না। কতভাবে সাজানো যায় সেটাই মূল বিষয়। তাই m কে রেখে আমাদের কোন কাজ নেই। আমরা $dp(at,cur)$ নিয়ে কাজ করবো। হয় এর পরের টায় বর্তমান ছাড়া আরেকটা নিব, তাহলে cur 1 হয়ে যাবে। কারন আমরা একটানা একাধিক খাবার নেইনি, $dp(at+1,1)$। আর যদি একই খাবার নেই তাহলে $dp(at+1,cur+1)$. এটা করলেই $\mathcal O(n^2)$ এ সমাধান করা যাবে। তবে আমার কেন যেন মনে হচ্ছে এটার আরো ভালো সলিউশন আছে, হয়তো লিনিয়ারের সাথে m বা k এর লগারিদমিক ফ্যাক্টর, তবে আমি এর থেকে ভালো সলিউশন বেড় করতে পারিনি। $\mathcal O(n^2)$ এর কোড দিয়ে দিচ্ছি।</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define ll long long 
+</span><span class="n">ll</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cur</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">pos</span><span class="o">==</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">cur</span><span class="o">==</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0LL</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">pos</span><span class="p">][</span><span class="n">cur</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">pos</span><span class="p">][</span><span class="n">cur</span><span class="p">];</span>
+    <span class="n">ll</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0LL</span><span class="p">;</span>
+    <span class="n">ll</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">cur</span><span class="o">&lt;</span><span class="n">k</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="n">mod</span><span class="o">+</span><span class="n">solve</span><span class="p">(</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">cur</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span>
+    <span class="k">else</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="o">%</span><span class="n">mod</span><span class="o">+</span><span class="n">solve</span><span class="p">(</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">pos</span><span class="p">][</span><span class="n">cur</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>সবাইকে ধন্যবাদ।</p>
+
+    </div>
+    <div class="fb-comments" data-href="https://duoblogger.github.io//2019/08/21/bdoi-practice-contest-1.html" data-width="100%" data-numposts="10"></div>
+</div>
+        </div>
+        <div class="col-md-4">
+            <!-- <div class="affix"> -->
+            <div class="container">
+    <!-- <div class="jumbotron">
+        <a href="fb://page/du0bl0gger/addfan">Like Our Page </a>
+    </div> -->
+    <div class="fb-like" data-href="https://www.facebook.com/du0bl0gger/" data-width="300" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+    <br><hr>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Authors</b></h4><hr> 
+        <a   id="h1_for_my_title" href="https://www.facebook.com/ahnaf.shahriar.7121" target="_blank"><b>Ahnaf Shahriar Asif</b></a>
+        <hr>
+        <a  id="h1_for_my_title" href="https://www.facebook.com/HBKWasi" target="_blank"><b>Munim Hasan Wasi</b></a>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Category</b></h4><hr><!-- <a id="button-tag" href="#Contest analysis" class="btn btn-primary" ></i>&nbsp;Contest analysis&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Contest analysis&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Contest analysis&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/09/26/bdoi-contest-2-analysis.html">BDOI Practice Contest-2 Analysis</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-09-26T00:00:00+06:00">2019-09-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/08/21/bdoi-practice-contest-1.html">BDOI Practice Contest-1 Analysis</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-08-21T00:00:00+06:00">2019-08-21 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Data Structures" class="btn btn-primary" ></i>&nbsp;Data Structures&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Data Structures&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Data Structures&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/04/z-function.html">Z Function</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-04T00:00:00+06:00">2019-07-04 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/26/merge-sort-tree.html">merge Sort Tree (MST)</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-26T00:00:00+06:00">2018-12-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Dynamic Programming" class="btn btn-primary" ></i>&nbsp;Dynamic Programming&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dynamic Programming&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Dynamic Programming&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/29/dp-on-trees.html">Dp on Trees</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-29T00:00:00+06:00">2019-06-29 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/28/basic-dynamic-programming.html">Basic Dynamic Programming</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-28T00:00:00+06:00">2019-06-28 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Geometry" class="btn btn-primary" ></i>&nbsp;Geometry&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Geometry&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Geometry&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/02/convex-hull.html">Convex Hull</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-02T00:00:00+06:00">2019-07-02 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Sorting" class="btn btn-primary" ></i>&nbsp;Sorting&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Sorting&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Sorting&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/26/merge-sort-tree.html">merge Sort Tree (MST)</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-26T00:00:00+06:00">2018-12-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/10/merge-sort.html">merge Sort</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-10T00:00:00+06:00">2018-12-10 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Strings" class="btn btn-primary" ></i>&nbsp;Strings&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Strings&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Strings&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/04/z-function.html">Z Function</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-04T00:00:00+06:00">2019-07-04 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Trees" class="btn btn-primary" ></i>&nbsp;Trees&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Trees&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Trees&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/29/dp-on-trees.html">Dp on Trees</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-29T00:00:00+06:00">2019-06-29 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr></div>
+</div> 
+            <!-- </div>        -->
+        </div>
+  </div>
+
+  <hr>
+<p id="footer-text" class="text-center"> 
+copyright&copy; asifthen00b. All rights reserved.
+<!-- <hr> -->
+</p>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

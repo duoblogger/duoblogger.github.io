@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  
+</script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+
+    <title>
+        
+          Convex Hull - duoblogger
+        
+    </title>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="mainNav">
+        <div class="container">
+          <a class="navbar-brand" href="/">DUOBLOGGER</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/about">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/objective">OBJECTIVE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/posts">POSTS</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/authors">Authors</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/tags">CATEGORY</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/contact">CONTACT</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+
+  <!-- <div class="container-fluid"> -->
+
+<div class="jumbotron">
+    <h1 class="text-center" id="h1_for_my_title"><b>Programming Throwdown</b></h1>
+    <h6 class="text-center" id="h1_for_my_title">Competitive Programming in Bengali</h6>
+    <hr>
+    <div class="text-center">
+        <a href="https://www.facebook.com/du0bl0gger/" target="_blank"><button class="btn btn-success">Visit our Page</button></a>
+    </div>
+</div>
+
+<!-- </div> -->
+
+  <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+    <h3 class="text-centers" id="h1_for_my_title"><b>Convex Hull</b></h3>
+    <p class="text-centers" id="author-date-style-post"> Posted by <span id="author-name-on-post">Munim Hasan Wasi</span> on July 02, 2019</p>
+    <hr>
+    <div class="container">
+        <p>আজকে আমরা অনেকগুলো কার্তেসিয় স্থানাঙ্ক দেওয়া থাকলে সেটার কনভেক্স হাল বের করা শিখবো।</p>
+
+<font color="#02b300"> কনভেক্স হাল:</font>
+<p>ধরি আমাদের কাছে <script type="math/tex">N</script> টা পয়েন্ট দেওয়া আছে। আমাদের উদ্দেশ্য হচ্ছে এমন ক্ষুদ্রতম <a href="https://en.wikipedia.org/wiki/Convex_polygon">উত্তল বহুভুজ</a> তৈরি করা যেটার মধ্যে সবগুলো পয়েন্ট আছে। এটাকেই ওই পয়েন্টগুলোর কনভেক্স হাল বলা হয়।</p>
+
+<font color="#02b300"> অ্যালগোরিদম: </font>
+<p>এখানে আমি গ্রাহাম স্ক্যান অ্যালগোরিদম ব্যবহার করে কনভেক্স হাল কিভাবে তৈরি করতে হয় সেটা দেখাবো। গ্রাহাম স্ক্যান এ শুধু কম্পেরিজন, যোগ আর গুন ব্যবহার করেই <script type="math/tex">O(N logN)</script> এ কনভেক্স হাল বের করা যায়। কনভেক্স হাল বের করার জন্য এটিই সবচেয়ে ভালো কম্প্লেক্সিটি। এটা প্রমাণ করা যায় যে এটার চেয়ে ভালো কম্প্লেক্সিটিতে কনভেক্স হাল বের করা যায় না।</p>
+
+<h3> <font color="#4459c9"> Description </font> </h3>
+<p>এই অ্যালগোরিদমটি প্রথমেই “সবচেয়ে নিচে ও সবচেয়ে বামে” এর পয়েন্ট <script type="math/tex">A</script> এবং “সবচেয়ে উপরে ও সবচেয়ে ডানে” এর পয়েন্ট <script type="math/tex">B</script> খুঁজে বের করে। এটা স্পষ্ট যে <script type="math/tex">A</script> আর <script type="math/tex">B</script> দুটোই কনভেক্স হালে অন্তর্ভুক্ত হবে। কারণ যেহেতু এই দুইটি পয়েন্ট সবচেয়ে দূরে অবস্থিত, বাকি সবগুলো পয়েন্ট থেকে এমন ভাবে দুটি পয়েন্ট নেয়া সম্ভব হবে না যে পয়েন্টদুটোর সংযোগরেখা <script type="math/tex">A</script> অথবা <script type="math/tex">B</script> কে কনভেক্স হালের ভিতরের দিকে ফেলে।</p>
+
+<p>এখন আমরা <script type="math/tex">A</script> ও <script type="math/tex">B</script> এর সংযোজক একটা রেখা কল্পনা করি। এই রেখাটি সবগুলো পয়েন্টকে দু’টি সেটে ভাগ করে। ধরি, সেট দুটি <script type="math/tex">S_1</script>ও <script type="math/tex">S_2</script> । <script type="math/tex">S_1</script> হচ্ছে সেসব পয়েন্টগুলো যেগুলা <script type="math/tex">AB</script> লাইনের উপরে আছে আর <script type="math/tex">S_2</script> হচ্ছে সেই পয়েন্টগুলা যেগুলা <script type="math/tex">AB</script> লাইনের নিচে আছে। যেই পয়েন্টগুলা <script type="math/tex">AB</script> লাইনের মধ্যে পরেছে যেগুলাকে যেকোনো একটাতে রাখলেই হবে। <script type="math/tex">A</script> আর <script type="math/tex">B</script> পয়েন্ট দুটি উভয় সেটেই থাকবে। অ্যালগোরিদমটি প্রথমে <script type="math/tex">S_1</script> সেটের পয়েন্টগুলা থেকে কনভেক্স হালের উপরের পার্ট টা তৈরি করে আর <script type="math/tex">S_2</script> পয়েন্টগুলা থেকে কনভেক্স হালের নিচের পার্টটা তৈরি করে। তারপর দুইটা পার্টকে একসাথে জুড়ে দিলেই তৈরি হয়ে গেলো আমাদের সুন্দর কনভেক্স হাল। 😍</p>
+
+<p>কিন্তু ওয়েট, এতো সোজা নাকি? কোথায় যেনো একটা গাফলা মনে হচ্ছে। হ্যাঁ। এখন উপরের পার্টের কনভেক্স হালটাই বা কিভাবে হবে 😨।</p>
+
+<p>উপায় কিন্তু আছে । 😀 উপরের সেটটা পাওয়ার জন্য আমরা প্রথমে <script type="math/tex">x</script> কো-অর্ডিনেট দিয়ে সবগুলো পয়েন্ট কে সর্ট করব। কনভেক্স হালের উপরের পার্টের প্রথম পয়েন্ট টা হবে <script type="math/tex">A</script> ও শেষ পয়েন্ট টা হবে <script type="math/tex">B</script>। আমরা দেখব যে বর্তমানে আমরা যে পয়েন্টে আছি সেটা <script type="math/tex">B</script> কি না। যদি <script type="math/tex">B</script> হয় তার মানে আমাদের কাজ শেষ। এখন আমাদের মাথায় এই চিন্তা টা আসতে পারে যে, আমরা শুধুমাত্র উপরের হাল টা বানানোর জন্য সব গুলো পয়েন্ট নিয়ে কাজ করছি। তাহলে তো এমন পয়েন্টগুলো চলে আসবে যেগুলো <script type="math/tex">AB</script> লাইনের নিচে। তাহলে তো ঝামেলা <script type="math/tex">!</script> ঝামেলা দূর করার জন্য আমরা <script type="math/tex">A</script>, <script type="math/tex">P_{current}</script> এবং <script type="math/tex">B</script> এর মধ্যে অরিয়েন্টেশন চেক করতে পারি। মানে যদি <script type="math/tex">A</script>    -&gt;  <script type="math/tex">P_{current}</script>   -&gt;  <script type="math/tex">B</script> পথটি ক্লক ওয়াইজ হয় তার মানে <script type="math/tex">P_{current}</script> পয়েন্টটি <script type="math/tex">AB</script> লাইনের উপরে আছে। তাহলে পয়েন্টটি <script type="math/tex">S_1</script> সেটেই পড়বে।</p>
+
+<p>যদি <script type="math/tex">P_{current}</script> পয়েন্টটি <script type="math/tex">S_1</script> সেটেই থাকে, তাহলে আমরা পয়েন্ট <script type="math/tex">P_{current}</script> এবং এই পর্যন্ত বানানো কনভেক্স হালের শেষ পয়েন্ট <script type="math/tex">hull_{last}</script> এবং তার আগের পয়েন্ট <script type="math/tex">hull_{last-1}</script> গুলো নিবো। এবার <script type="math/tex">hull_{last-1}</script> -&gt; <script type="math/tex">hull_{last}</script> ও <script type="math/tex">hull_{last}</script> -&gt; <script type="math/tex">P_{current}</script> এই দুটি রেখা আঁকবো। এই রেখা দুটি <script type="math/tex">hull_{last}</script> বিন্দুতে ছেদ করে। এখন আমরা রেখাদ্বয় দ্বারা উৎপন্ন কোণটি চেক করবো। যদি এই কোণটি ক্লকওয়াইজ হয়, আমরা বর্তমান পয়েন্ট টিকে হালে যুক্ত করে দিতে পারি। আর এন্টি-ক্লকওয়াইজ হলে আমরা হালের লাস্ট পয়েন্টটিকে ডিলিট করে দিব। এবং <script type="math/tex">P_{current}</script> পয়েন্টটিকে হালে যুক্ত করবো। কারণ, <script type="math/tex">hull_{last-1}</script> এবং <script type="math/tex">P_{current}</script> রেখাটি সেক্ষেত্রে <script type="math/tex">hull_{last}</script> পয়েন্টটিকে কাভার করতে পারবে।</p>
+
+<p>একই লজিকে আমরা হালের নিচের  অংশটুকুও তৈরি করে ফেলতে পারি। এক্ষেত্রে শুধু ক্লকওয়াইজ আর এন্টি-ক্লকওয়াইজ এর ব্যবহারটা উল্টে যাবে। আগের ক্ষেত্রে  ক্লক ওয়াইজ হলে যুক্ত করে দিতাম এবং এন্টি ক্লকওয়াইজ হলে ডিলিট করে দিতাম।  নিচের হাল বানানোর ক্ষেত্রে এন্টি ক্লকওয়াইজ হলে যুক্ত করে দিতে হবে এবং ক্লকওয়াইজ হলে ডিলিট করে দিতে হবে।
+এবার, উপরের আর নিচের হালটা যুক্ত করে দিলেই তৈরি হয়ে গেল আমাদের সুন্দর কনভেক্স হাল। এটার <script type="math/tex">C</script>++ ইম্প্লেমেন্টেশন করা যেতে পারে এভাবে ।</p>
+
+<h3> <font color="#4459c9">Implementation</font> </h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">pt</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">bool</span> <span class="nf">cmp</span><span class="p">(</span><span class="n">pt</span> <span class="n">a</span><span class="p">,</span> <span class="n">pt</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span> <span class="o">||</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">cw</span><span class="p">(</span><span class="n">pt</span> <span class="n">a</span><span class="p">,</span> <span class="n">pt</span> <span class="n">b</span><span class="p">,</span> <span class="n">pt</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="o">-</span><span class="n">c</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">y</span><span class="o">-</span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">c</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="o">-</span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">ccw</span><span class="p">(</span><span class="n">pt</span> <span class="n">a</span><span class="p">,</span> <span class="n">pt</span> <span class="n">b</span><span class="p">,</span> <span class="n">pt</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="o">-</span><span class="n">c</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">y</span><span class="o">-</span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">c</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="o">-</span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">convex_hull</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">pt</span><span class="o">&gt;&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">a</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">cmp</span><span class="p">);</span>
+    <span class="n">pt</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">pt</span><span class="o">&gt;</span> <span class="n">up</span><span class="p">,</span> <span class="n">down</span><span class="p">;</span>
+    <span class="n">up</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+    <span class="n">down</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">cw</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p2</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">up</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cw</span><span class="p">(</span><span class="n">up</span><span class="p">[</span><span class="n">up</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">up</span><span class="p">[</span><span class="n">up</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+                <span class="n">up</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+            <span class="n">up</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">ccw</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p2</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">down</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ccw</span><span class="p">(</span><span class="n">down</span><span class="p">[</span><span class="n">down</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">down</span><span class="p">[</span><span class="n">down</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+                <span class="n">down</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+            <span class="n">down</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">a</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">up</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">up</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">down</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">down</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3> <font color="100680">Practice Problems</font></h3>
+<ul>
+  <li><a href="https://open.kattis.com/problems/convexhull">Kattis - Convex Hull</a></li>
+  <li><a href="https://open.kattis.com/problems/parade">Kattis - Keep the Parade Safe</a></li>
+  <li><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1185">Timus 1185: Wall</a></li>
+  <li><a href="http://usaco.org/index.php?page=viewproblem2&amp;cpid=382">Usaco 2014 January Contest, Gold - Cow Curling</a></li>
+</ul>
+
+
+    </div>
+    <div class="fb-comments" data-href="https://duoblogger.github.io//2019/06/29/dp-on-trees.html" data-width="100%" data-numposts="10"></div>
+</div>
+        </div>
+        <div class="col-md-4">
+            <!-- <div class="affix"> -->
+            <div class="container">
+    <!-- <div class="jumbotron">
+        <a href="fb://page/du0bl0gger/addfan">Like Our Page </a>
+    </div> -->
+    <div class="fb-like" data-href="https://www.facebook.com/du0bl0gger/" data-width="300" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+    <br><hr>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Authors</b></h4><hr> 
+        <a   id="h1_for_my_title" href="https://www.facebook.com/ahnaf.shahriar.7121" target="_blank"><b>Ahnaf Shahriar Asif</b></a>
+        <hr>
+        <a  id="h1_for_my_title" href="https://www.facebook.com/HBKWasi" target="_blank"><b>Munim Hasan Wasi</b></a>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Category</b></h4><hr><!-- <a id="button-tag" href="#Contest analysis" class="btn btn-primary" ></i>&nbsp;Contest analysis&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Contest analysis&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Contest analysis&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/09/26/bdoi-contest-2-analysis.html">BDOI Practice Contest-2 Analysis</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-09-26T00:00:00+06:00">2019-09-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/08/21/bdoi-practice-contest-1.html">BDOI Practice Contest-1 Analysis</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-08-21T00:00:00+06:00">2019-08-21 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Data Structures" class="btn btn-primary" ></i>&nbsp;Data Structures&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Data Structures&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Data Structures&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/04/z-function.html">Z Function</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-04T00:00:00+06:00">2019-07-04 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/26/merge-sort-tree.html">merge Sort Tree (MST)</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-26T00:00:00+06:00">2018-12-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Dynamic Programming" class="btn btn-primary" ></i>&nbsp;Dynamic Programming&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dynamic Programming&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Dynamic Programming&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/29/dp-on-trees.html">Dp on Trees</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-29T00:00:00+06:00">2019-06-29 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/28/basic-dynamic-programming.html">Basic Dynamic Programming</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-28T00:00:00+06:00">2019-06-28 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Geometry" class="btn btn-primary" ></i>&nbsp;Geometry&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Geometry&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Geometry&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/02/convex-hull.html">Convex Hull</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-02T00:00:00+06:00">2019-07-02 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Sorting" class="btn btn-primary" ></i>&nbsp;Sorting&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Sorting&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Sorting&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/26/merge-sort-tree.html">merge Sort Tree (MST)</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-26T00:00:00+06:00">2018-12-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/10/merge-sort.html">merge Sort</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-10T00:00:00+06:00">2018-12-10 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Strings" class="btn btn-primary" ></i>&nbsp;Strings&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Strings&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Strings&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/04/z-function.html">Z Function</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-04T00:00:00+06:00">2019-07-04 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Trees" class="btn btn-primary" ></i>&nbsp;Trees&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Trees&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Trees&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/29/dp-on-trees.html">Dp on Trees</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-29T00:00:00+06:00">2019-06-29 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr></div>
+</div> 
+            <!-- </div>        -->
+        </div>
+  </div>
+
+  <hr>
+<p id="footer-text" class="text-center"> 
+copyright&copy; asifthen00b. All rights reserved.
+<!-- <hr> -->
+</p>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  
+</script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+
+    <title>
+        
+          merge Sort - duoblogger
+        
+    </title>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="mainNav">
+        <div class="container">
+          <a class="navbar-brand" href="/">DUOBLOGGER</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/about">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/objective">OBJECTIVE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/posts">POSTS</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/authors">Authors</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/tags">CATEGORY</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/contact">CONTACT</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+
+  <!-- <div class="container-fluid"> -->
+
+<div class="jumbotron">
+    <h1 class="text-center" id="h1_for_my_title"><b>Programming Throwdown</b></h1>
+    <h6 class="text-center" id="h1_for_my_title">Competitive Programming in Bengali</h6>
+    <hr>
+    <div class="text-center">
+        <a href="https://www.facebook.com/du0bl0gger/" target="_blank"><button class="btn btn-success">Visit our Page</button></a>
+    </div>
+</div>
+
+<!-- </div> -->
+
+  <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+    <h3 class="text-centers" id="h1_for_my_title"><b>merge Sort</b></h3>
+    <p class="text-centers" id="author-date-style-post"> Posted by <span id="author-name-on-post">Ahnaf Shahriar Asif</span> on December 10, 2018</p>
+    <hr>
+    <div class="container">
+        <!-- This is also a comment in markdown -->
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- add2 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8949878373616356" data-ad-slot="7315241833" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<p>আমরা সবাই জানি, মাঝে মাঝে অনেক দরকারে আমাদেরকে অ্যারে সর্ট করা লাগে, আর সবথেকে ভাল সর্টিং অ্যালগরিদম  <script type="math/tex">n\log { n }</script> এ কাজ করে। কিন্তু আমরা তো <script type="math/tex">O({ n }^{ 2 })</script> এ সর্ট করতে পারি, কিন্তু  জানি না, কিভাব <script type="math/tex">n\log { n }</script> এ সর্টিং করা যায়। যাই হোক, আজকে আমরা সেটাই জানার চেষ্টা করব।</p>
+
+<h3><font color="#4459c9">Naive Approach</font></h3>
+<p>আমরা সবাই কিন্তু <script type="math/tex">O({ n }^{ 2 })</script> এ সহজেই সর্ট করতে পারি। এখন আমাদের উদ্দেশ্য হল একে <script type="math/tex">n\log { n }</script> এ রূপান্তর করা। দেখা যাক কি হয়।</p>
+
+<p>আচ্ছা, আমাদের যদি ২ টা সর্টেড  অ্যারে দেয়া হয়, আর যদি কোনোভাবে আমরা ২ টা অ্যারেকে <script type="math/tex">merge</script> করতে পারি, তাহলেই অনেক কাজ হয়ে যায়। কিন্তু আমি এখনি সেইদিকে যাচ্ছি না।  ধরে নাও আমরা ২ টা সর্টেড অ্যারে <script type="math/tex">O({ n })</script> এ <script type="math/tex">merge</script>  করতে পারি। আর তাই যদি পারি, তাহলে কি আমরা কোনভাবে ওই <script type="math/tex">property</script> ব্যাবহার করে সুবিধা পাব <script type="math/tex">?</script> দেখা যাক।</p>
+
+<h3><font color="#4459c9">Better Approach 😮</font></h3>
+<p>ধরো একটা অ্যারে দেয়া আছে  <script type="math/tex">ara[12] = \left\{ 5,2,4,8,9,6,1,3,10,7,5,11 \right\}</script> ।</p>
+
+<p>তুমি করলে কি, এই অ্যারেকে ২ ভাগে ভাগ করে ফেললে।</p>
+
+<p><img src="https://roomcharshotin.files.wordpress.com/2018/09/mamur_beta.png" alt="mamur_beta" /></p>
+
+<p>এখন চিন্তা করো, এভাবে ভাগ করে আমাদের লাভ কি <script type="math/tex">?</script> আগেই বলেছি আমাদের যদি ২ টা সর্টেড অ্যারে  দেয়া হয়, তাহলে তাদেরকে <script type="math/tex">merge</script> করতে আমাদের <script type="math/tex">O(n)</script> সময় লাগে, কিভাবে <script type="math/tex">?</script> সেটা পরে বলছি, আগে ধরে নাও। আচ্ছা, হলো,এবার আমরা গাণিতিকভাবে দেখব, আমাদের কি উপকার হলো 🙂
+আগে আসি, সম্পূর্ণ অ্যারে <script type="math/tex">O({ n }^{ 2 })</script> তে সর্ট করলে কি হতো।</p>
+
+<p><script type="math/tex">⇒ O({ n }^{ 2 })</script> <script type="math/tex">⇒ O({ 12 }^{ 2 })</script> ⇒ O(144)</p>
+
+<p>এবার আমাদের নতুন Approach এর কি অবস্থা সেটা দেখা যাক 🙂</p>
+
+<p>২ টা অ্যারে আছে, প্রথমটা সর্ট করতে লাগে <script type="math/tex">O({ p}^{ 2 }) = 36</script>, দ্বিতীয় অ্যারে  সর্ট করতে লাগে   <script type="math/tex">O({ q}^{ 2 }) = 36</script> , বা , মোট <script type="math/tex">72</script> , আর <script type="math/tex">merge</script> করতে লাগবে  <script type="math/tex">O(n) = 12</script> . সুতরাং মোট কাজ করতে হল  <script type="math/tex">72+12 = 84</script>. কোথায় <script type="math/tex">144</script>,  কোথায় <script type="math/tex">84</script> ! !😮 কি প্রো রে বাবা 😥 ।</p>
+
+<p>এবার একটা  <script type="math/tex">twist</script> দিচ্ছি। আমরা যদি প্রথম অ্যারেকে আবার <script type="math/tex">2</script> ভাগে ভাগ করি,তাহলে আমাদের প্রথম অ্যারে সর্ট করতে কত সময় লাগবে <script type="math/tex">?</script> অইত্ত, <script type="math/tex">2</script> ভাগ কে সর্ট করবা , তারপর <script type="math/tex">merge</script> করবা, হিসাব করে দেখ, মোট <script type="math/tex">24</script> টা অপারেশন করা লাগছে, আগে কিন্তু <script type="math/tex">36</script> টা করা লাগত। একিভাবে আমরা যদি ডান পাশের অ্যারেকেও <script type="math/tex">2</script> ভাগে ভাগ করে সর্ট করি, তাহলে আমাদের <script type="math/tex">24</script> টা অপারেশন করা লাগতেছে, তার মানে তখন সম্পূর্ণ অ্যারে সর্ট করতে আমাদের লাগবে হলো, <script type="math/tex">24+24+12 = 60</script> 😮 কোথায় <script type="math/tex">84</script> আর কোথায় <script type="math/tex">60!</script> আবার যেগুলাকে ভাগ করে <script type="math/tex">2</script> টা করে পেলাম, সেগুলাকে আরও ভাগ করে আরও কমানো সম্ভব না <script type="math/tex">?</script> এভাবে আমরা আসলে কতক্ষণ পর্যন্ত ভাঙতে পারব <script type="math/tex">?</script> চিন্তা করো তো দেখি <script type="math/tex">?</script> হুম, যদি কখনো ভাগ করতে করতে দেখো যে সাইজ <script type="math/tex">1</script> হয়ে গেছে, তাহলে কি আর ভাগ করা লাগবে ? লাগবে না তো, <script type="math/tex">1</script> সাইজের একটা অ্যারে তো আগে থেকেই সর্টেড! 😀 তাহলে আমরা <script type="math/tex">recursion</script> এর মতো করে চিন্তা করবো। ভাঙতে থাকব, যখন সাইজ <script type="math/tex">1</script> হয়ে যাবে, তখন আর সর্ট করা লাগবে না। এখন চিন্তা করো তো দেখি <script type="math/tex">!</script> যদি <script type="math/tex">2</script> পাশের অ্যারেই <script type="math/tex">1</script> সাইজের হয়, তাহলে আমাদের ওই অ্যারেগুলাকে কি নতুন করে সর্ট করা লাগতেছে? লাগতেছে না কিন্তু, শুধুমাত্র আমরা <script type="math/tex">merge</script> করে উপরের দিকে যেতে থাকব। তার মানে <script type="math/tex">O({ n }^{ 2 })</script> এ সর্ট করার যে বেপারটা, সেটা আমাদের করাই লাগতেসে না, শুধু <script type="math/tex">merge</script> করে করে আমরা উপরের দিকে উঠে যাচ্ছি, তাহলে আমাদের মোট merge করতে যা টাইম লাগবে, তাই হলো আমাদের <script type="math/tex">Complexity</script> 🙂 ।</p>
+
+<h3><font color="#4459c9">merge Function 😮</font></h3>
+<p>এবার আসা যাক আমাদের সেই বিখ্যাত <script type="math/tex">merge</script> ফাংশনটার দিকে 😛</p>
+
+<p><img src="https://roomcharshotin.files.wordpress.com/2018/09/picture1.png?w=740" alt="picture1" /></p>
+
+<p>আমরা প্রথমেই উপরের ছবিদুটোর দিকে তাকাই । আমরা অ্যারে <script type="math/tex">2</script> টাকে সর্ট করেছি কোনোভাবে। এবার আমাদের <script type="math/tex">merge</script> করে বড়ো অ্যারে বানাতে হবে।  যদি আমরা এই অ্যারে <script type="math/tex">2</script> টার মোট <script type="math/tex">12</script> টা সংখ্যাকে <script type="math/tex">12</script> টা অপারেশন করে সর্ট করতে পারি, তাহলেই আমরা ভালো করেই বুঝতে পারবো, জিনিষটা কিভাবে <script type="math/tex">O({ n })</script> এ কাজ করে। এবার নিচের ছবি দেখো। আমরা এই <script type="math/tex">2</script> টা অ্যারে থেকে <script type="math/tex">1</script> টা <script type="math/tex">1</script> টা করে এলিমেন্ট নিয়ে বড়ো অ্যারেটাতে বসাবো এবং ওই বড়ো অ্যারেটাতে ছোট <script type="math/tex">2</script> টা অ্যারের সবগুলো এলিমেন্ট সর্টেড অবস্থায় থাকবে। তার মানে আমরা <script type="math/tex">2</script>টা অ্যারেকে <script type="math/tex">merge</script> করে একটা বড়ো অ্যারে বানাচ্ছি, সেটাই হলো আমাদের মূল উদ্দেশ্য।</p>
+
+<p><img src="https://roomcharshotin.files.wordpress.com/2018/09/picture2.png?w=740" alt="picture2" /></p>
+
+<p>দেখতেই পারছো, আমরা নিচের ছোটো অ্যারে <script type="math/tex">2</script> টার প্রথম এলিমেন্টে একটা করে পয়েন্টার রাখি। এরপরের সবকিছু কহু সহজ, আমরা শুধু এই <script type="math/tex">2</script> টা পয়েন্টার দেখেই আমাদের সিদ্ধান্ত নিব। লাল আর সবুজ পয়েন্টারের মধ্যে যে এলিমেন্ট ছোটো,সেটি বড়ো অ্যারেতে ইনসার্ট করবো এবং সেই পয়েন্টার ডানদিকে একঘর সামনে নিব। যেহেতু, অ্যারে <script type="math/tex">2</script>টা সর্টেড, তাই আমাদের এই কাজটা করতে সমস্যা হবেনা। একটু চিন্তা করলেই বুঝতে পারবে জিনিসটা কেন কাজ করে। লাল আর সবুজ পয়েন্টারের আগের এলিমেন্টগুলা আগেই ইনসার্ট করা হয়ে গেছে , সুতরাং এভাবে নিলেই আমরা বড় অ্যারেটা সর্টেড আকারে পেয়ে যাবো। নিচের ছবিগুলা দেখ, একদম হাতে হাতে করে করে দেখিয়েছি, ছবিগুলো দেখলে মুল কনসেপ্ট বুঝতে কষ্ট হওয়ার কথা না 🙂</p>
+
+<p><img src="https://roomcharshotin.files.wordpress.com/2018/09/picture3.png?w=740" alt="picture3.png" /></p>
+
+<p>ডানপাশের অ্যারের পয়েন্টার <script type="math/tex">1</script> ঘর সামনে নিলাম, যেহেতু <script type="math/tex">% <![CDATA[
+1 < 2 %]]></script> । এভাবে নিচের ছবিগুলো পর্যবেক্ষণ কর 🙂।</p>
+
+<p><img src="https://roomcharshotin.files.wordpress.com/2018/09/main_picture.png?w=740" alt="main_picture.png" /></p>
+
+<p><img src="https://roomcharshotin.files.wordpress.com/2018/09/main_picture5.png?w=740" alt="main_picture5.png" /></p>
+
+<p><img src="https://roomcharshotin.files.wordpress.com/2018/09/main_picture2.png?w=783&amp;h=647" alt="main_picture2" /></p>
+
+<p><img src="https://roomcharshotin.files.wordpress.com/2018/09/main_picture3.png?w=740" alt="main_picture3" /></p>
+
+<p><img src="https://roomcharshotin.files.wordpress.com/2018/09/main_picture61.png?w=740" alt="main_picture6" /></p>
+
+<p><img src="https://roomcharshotin.files.wordpress.com/2018/09/main_picture_done.png?w=740" alt="main_picture_done" /></p>
+
+<p>তাহলে, আমরা কি করছি আসলে <script type="math/tex">?</script> আমরা <script type="math/tex">2</script> টা পয়েন্টার নিচ্ছি, আর যেটা ছোটো, সেটাকে ওই বড় অ্যারেটার মধ্যে Insert করে, তারপর সেই পয়েন্টারকে এক ঘর সামনে নিচ্ছি, শেষ <script type="math/tex">!</script> আমরা সহজেই <script type="math/tex">O({ n })</script> এ <script type="math/tex">merge</script> করে ফেলতে পারছি 😀 । এবার কোডটা একটু দেখা যাক। আমরা একটা ফাংশন বানাবো, যেখানে আমরা <script type="math/tex">2</script> টা ছোটো অ্যারে আর একটা বড় অ্যারে দিব, আর তারা ছোট অ্যারে <script type="math/tex">2</script> টাকে <script type="math/tex">merge</script> করে বড় অ্যারেটাকে সর্টেড অবস্থায় আমাদেরকে দিবে , কি মজা <script type="math/tex">!!!</script></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">merge</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">;</span>
+     <span class="c1">// here ara1[] = left array;</span>
+     <span class="c1">// here ara2[] = right array;</span>
+     <span class="c1">// here temp[] = the big array(where we are merging)</span>
+     <span class="c1">// here n means size of the left and right array</span>
+     <span class="c1">// here main_size means then size of the big array (mainly n*2)</span>
+     <span class="c1">//here i means pointer of left array</span>
+     <span class="c1">//here j means pointer of right array</span>
+     <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="n">main_size</span><span class="p">;){</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span><span class="n">temp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">ara2</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">];</span><span class="c1">// it means we have inserted all the values of the left array</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span><span class="n">temp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">ara1</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span><span class="c1">// it means we have inserted all the values of the left array</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">ara1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">ara2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="n">temp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">ara1</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span><span class="c1">// you know what it means :) </span>
+	<span class="k">else</span> <span class="n">temp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">ara2</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">];</span><span class="c1">// you also know about it, think deeply :) </span>
+	<span class="n">k</span><span class="o">++</span><span class="p">;</span><span class="c1">//everytime we are increasing k, after inserting a value in the temp[] array</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>তো, কোড দেখে তোমরা বুঝে ফেলেছ যে কিভাবে <script type="math/tex">merge</script> করতে হয়। এবার একটা জিনিষ খেয়াল কর, আমরা আমাদের মুল যে টার্গেট, সেখানে <script type="math/tex">2</script> টা আলাদা অ্যারা কে <script type="math/tex">merge</script> করছি না, একটা অ্যারা এর <script type="math/tex">2</script> টা অংশকে <script type="math/tex">merge</script> করছি। তাহলে আমাদের কি আসলে <script type="math/tex">2</script> টা আলাদা আর‍্যা <script type="math/tex">Declare</script> করার দরকার আছে <script type="math/tex">?</script> একটু চিন্তা করে দেখ, আমরা যদি শুধু <script type="math/tex">i</script> অ্যার <script type="math/tex">j</script> পাঠাই তাহলেও কিন্তু আমাদের চলে যাচ্ছে। এখন চিন্তা কর দেখি, আমাদের সম্পূর্ণ সর্টিং ফাংশনটা কেমন হবে<script type="math/tex">?</script> আমরা কি করছি<script type="math/tex">?</script> অ্যারাটাকে প্রথমে <script type="math/tex">2</script> ভাগে ভাগ করতে থাকছি, অ্যার যখন ভাগ করা শেষ তখন <script type="math/tex">merge</script> করে উপরে উঠে যাচ্ছি। এই কাজটা কি তুমি একা একা করতে পারবে <script type="math/tex">?</script> <script type="math/tex">30</script> মিনিট চেষ্টা করে দেখ, তারপর নিচের কোডটা দেখ।</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="mi">1000</span><span class="p">];</span><span class="c1">//main array</span>
+<span class="kt">int</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1000</span><span class="p">];</span><span class="c1">//temp array</span>
+
+<span class="kt">void</span> <span class="nf">mergesort</span><span class="p">(</span><span class="kt">int</span> <span class="n">low</span><span class="p">,</span><span class="kt">int</span> <span class="n">high</span><span class="p">)</span><span class="c1">// sorts num[low....high]</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">low</span> <span class="o">==</span> <span class="n">high</span><span class="p">)</span><span class="k">return</span><span class="p">;</span><span class="c1">//it is the basecase</span>
+    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span><span class="o">+</span><span class="n">high</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">mergesort</span><span class="p">(</span><span class="n">low</span><span class="p">,</span><span class="n">mid</span><span class="p">);</span>
+    <span class="n">mergesort</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">high</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">low</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="n">low</span><span class="p">;</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">;</span><span class="n">k</span><span class="o">++</span><span class="p">){</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="n">temp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">];</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="n">temp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">temp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+	<span class="k">else</span> <span class="n">temp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">low</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+	<span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="c1">//inserting sorted list[low to high] from temp to main array..</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>আজ এ পর্যন্তই। <script type="math/tex">merge</script> <script type="math/tex">Sort</script> নিয়ে বকবকানি এখানেই শেষ। তুমি যদি সেগমেন্ট ট্রি পারো, তাহলে <a href="https://roomcharshotin.wordpress.com/2018/10/01/merge-sort-tree-mst/">এই ব্লগটি </a> পড়ে দেখতে পারো🙂 <strong>হ্যাপি কোডিং</strong> !
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- add2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8949878373616356" data-ad-slot="7315241833" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({}); 
+</script></p>
+
+    </div>
+    <div class="fb-comments" data-href="https://duoblogger.github.io/" data-width="100%" data-numposts="10"></div>
+</div>
+        </div>
+        <div class="col-md-4">
+            <!-- <div class="affix"> -->
+            <div class="container">
+    <!-- <div class="jumbotron">
+        <a href="fb://page/du0bl0gger/addfan">Like Our Page </a>
+    </div> -->
+    <div class="fb-like" data-href="https://www.facebook.com/du0bl0gger/" data-width="300" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+    <br><hr>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Authors</b></h4><hr> 
+        <a   id="h1_for_my_title" href="https://www.facebook.com/ahnaf.shahriar.7121" target="_blank"><b>Ahnaf Shahriar Asif</b></a>
+        <hr>
+        <a  id="h1_for_my_title" href="https://www.facebook.com/HBKWasi" target="_blank"><b>Munim Hasan Wasi</b></a>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Category</b></h4><hr><!-- <a id="button-tag" href="#Contest analysis" class="btn btn-primary" ></i>&nbsp;Contest analysis&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Contest analysis&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Contest analysis&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/09/26/bdoi-contest-2-analysis.html">BDOI Practice Contest-2 Analysis</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-09-26T00:00:00+06:00">2019-09-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/08/21/bdoi-practice-contest-1.html">BDOI Practice Contest-1 Analysis</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-08-21T00:00:00+06:00">2019-08-21 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Data Structures" class="btn btn-primary" ></i>&nbsp;Data Structures&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Data Structures&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Data Structures&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/04/z-function.html">Z Function</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-04T00:00:00+06:00">2019-07-04 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/26/merge-sort-tree.html">merge Sort Tree (MST)</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-26T00:00:00+06:00">2018-12-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Dynamic Programming" class="btn btn-primary" ></i>&nbsp;Dynamic Programming&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dynamic Programming&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Dynamic Programming&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/29/dp-on-trees.html">Dp on Trees</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-29T00:00:00+06:00">2019-06-29 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/28/basic-dynamic-programming.html">Basic Dynamic Programming</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-28T00:00:00+06:00">2019-06-28 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Geometry" class="btn btn-primary" ></i>&nbsp;Geometry&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Geometry&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Geometry&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/02/convex-hull.html">Convex Hull</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-02T00:00:00+06:00">2019-07-02 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Sorting" class="btn btn-primary" ></i>&nbsp;Sorting&nbsp;(2)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Sorting&nbsp;(2)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Sorting&nbsp;(2)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/26/merge-sort-tree.html">merge Sort Tree (MST)</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-26T00:00:00+06:00">2018-12-26 00:00:00 +0600</time>
+                    </div> -->
+                </div><div class="tag-entry">
+                    <a class="" id="taglist" href="/2018/12/10/merge-sort.html">merge Sort</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2018-12-10T00:00:00+06:00">2018-12-10 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Strings" class="btn btn-primary" ></i>&nbsp;Strings&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Strings&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Strings&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/07/04/z-function.html">Z Function</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-07-04T00:00:00+06:00">2019-07-04 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr><!-- <a id="button-tag" href="#Trees" class="btn btn-primary" ></i>&nbsp;Trees&nbsp;(1)</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Trees&nbsp;(1)
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>Trees&nbsp;(1)<b></h6><div class="tag-entry">
+                    <a class="" id="taglist" href="/2019/06/29/dp-on-trees.html">Dp on Trees</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="2019-06-29T00:00:00+06:00">2019-06-29 00:00:00 +0600</time>
+                    </div> -->
+                </div><hr></div>
+</div> 
+            <!-- </div>        -->
+        </div>
+  </div>
+
+  <hr>
+<p id="footer-text" class="text-center"> 
+copyright&copy; asifthen00b. All rights reserved.
+<!-- <hr> -->
+</p>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

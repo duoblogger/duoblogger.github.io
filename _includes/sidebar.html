@@ -1,0 +1,55 @@
+<div class="container">
+    <!-- <div class="jumbotron">
+        <a href="fb://page/du0bl0gger/addfan">Like Our Page </a>
+    </div> -->
+    <div class="fb-like" data-href="https://www.facebook.com/du0bl0gger/" data-width="300" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+    <br><hr>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Authors</b></h4><hr> 
+        <a   id="h1_for_my_title" href="https://www.facebook.com/ahnaf.shahriar.7121" target="_blank"><b>Ahnaf Shahriar Asif</b></a>
+        <hr>
+        <a  id="h1_for_my_title" href="https://www.facebook.com/HBKWasi" target="_blank"><b>Munim Hasan Wasi</b></a>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <h4 class="text-center" id="h1_for_my_title"><b>Category</b></h4><hr>
+        {%- capture site_tags -%}
+        {%- for tag in site.tags -%}
+            {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+        {%- endcapture -%}
+        {%- assign tags_list = site_tags | split:',' | sort -%}
+        
+        {%- for tag in tags_list -%}
+            <!-- <a id="button-tag" href="#{{- tag -}}" class="btn btn-primary" ></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a> -->
+            
+            <!-- <div class="dropdown">
+                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                {{- tag -}}&nbsp;({{site.tags[tag].size}})
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div> -->
+            <h6 id="h1_for_my_title"><b>{{- tag -}}&nbsp;({{site.tags[tag].size}})<b></h6>
+            {%- for post in site.tags[tag] -%}
+                <div class="tag-entry">
+                    <a class="" id="taglist" href="{{ post.url | relative_url }}">{{- post.title -}}</a>
+                    <!-- <div class="entry-date">
+                        <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: site.date_format -}}</time>
+                    </div> -->
+                </div>  
+            {%- endfor -%}
+            <hr>
+
+            
+        {%- endfor -%}
+    </div>
+</div>
