@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-26T10:20:24+06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">duoblogger</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">BDOI Practice Contest-2 Analysis</title><link href="http://localhost:4000/2019/09/26/bdoi-contest-2-analysis.html" rel="alternate" type="text/html" title="BDOI Practice Contest-2 Analysis" /><published>2019-09-26T00:00:00+06:00</published><updated>2019-09-26T00:00:00+06:00</updated><id>http://localhost:4000/2019/09/26/bdoi-contest-2-analysis</id><content type="html" xml:base="http://localhost:4000/2019/09/26/bdoi-contest-2-analysis.html">&lt;h2 id=&quot;problem-1--very-hard-problem&quot;&gt;Problem 1 : Very Hard Problem&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-26T12:31:20+06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">duoblogger</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">BDOI Practice Contest-2 Analysis</title><link href="http://localhost:4000/2019/09/26/bdoi-contest-2-analysis.html" rel="alternate" type="text/html" title="BDOI Practice Contest-2 Analysis" /><published>2019-09-26T00:00:00+06:00</published><updated>2019-09-26T00:00:00+06:00</updated><id>http://localhost:4000/2019/09/26/bdoi-contest-2-analysis</id><content type="html" xml:base="http://localhost:4000/2019/09/26/bdoi-contest-2-analysis.html">&lt;h2 id=&quot;problem-1--very-hard-problem&quot;&gt;Problem 1 : Very Hard Problem&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;/html-statements/Statements.html&quot;&gt;Problem Description&lt;/a&gt;&lt;/p&gt;
 
@@ -6,9 +6,9 @@
 
 &lt;p&gt;এর সমাধানটি একদম সহজ। আমাকে $f(n)$ দেয়া আছে, আমাকে $n$ বেড় করতে হবে। আমরা ফাংশনের দিকে তাকালেই বুঝতে পারবো। এটি আসলে $1+2+3+….+n$ করছে। তার মানে হলো $f(x)$ হলো 1 থেকে n পর্যন্ত সংখ্যাগুলোর যোগফল। তাহলে আমরা এটাও বলতে পারি $\displaystyle{f(x) = \frac{x(x+1)}{2}}$। এবার আমাদোর জন্য সমস্যাটি সমাধান করা সহজ। একটু বীজগনিত খাটালেই এরকম হবেঃ&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;n^2 + n = 2f(x)&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n^2 + n = 2f(n)&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;n^2 + n -2f(x) = 0&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n^2 + n -2f(n) = 0&lt;/script&gt;
 
 &lt;p&gt;এবার দ্বিঘাত সমীকরন ব্যাবহার করে x এর মান বেড় করলেই হবে। যদি পাওয়া না যায় তাহলে উত্তর -1। মজার ব্যাপার হলো এটি আমি বাইনারি সার্চ দিয়ে সমাধান করেছিলাম। অর্থাৎ, n এর উপর বাইনারি সার্চ করে বেড় করেছি, কোন $n$ এর জন্য $f(n)$ এর মান ইনপুটের সমান হয়।&lt;/p&gt;
 
