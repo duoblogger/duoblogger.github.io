@@ -1,12 +1,12 @@
 ---
-layout: main
+layout: main_page
 ---
 <div class="container">
-    <h3 class="text-centers" id="h1_for_my_title"><b>{{page.title}}</b></h3>
-    <p class="text-centers" id="author-date-style-post"> Posted by <span id="author-name-on-post">{{ page.author }}</span> on {{ page.date | date: '%B %d, %Y' }}</p>
+    <h3 class="text-center" id="h1_for_my_title"><b>{{page.title}}</b></h3>
+    <p class="text-center" id="author-date-style-post"> Posted by <span id="author-name-on-post">{{ page.author }}</span> on {{ page.date | date: '%B %d, %Y' }}</p>
     <hr>
     <div class="container">
         {{content}}
     </div>
-    <div class="fb-comments" data-href="https://duoblogger.github.io/{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-width="100%" data-numposts="10"></div>
+    <div class="fb-comments" data-href="https://duoblogger.github.io/{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-width="100%" data-numposts="15"></div>
 </div>

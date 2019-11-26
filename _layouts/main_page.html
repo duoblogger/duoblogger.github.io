@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+{% include head.html %}
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
+  {% include navbar.html %}
+
+  {% include sitename.html %}
+
+  <div class="row">
+        <div class="col-md-1">
+         
+        </div>
+        <div class="col-md-7">
+            {{ content }}
+        </div>
+        <div class="col-md-4">
+            <!-- <div class="affix"> -->
+            {% include sidebar.html %} 
+            <!-- </div>        -->
+        </div>
+  </div>
+
+  {% include footer.html %}
+
+  {% include scripts.html %}
+
+
+</body>
+
+</html>
