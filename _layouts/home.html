@@ -4,7 +4,7 @@ layout: main
 
 <div class="container">
     <!-- <div class="jumbotron"> -->
-    {% for post in site.posts limit: 10 %}
+    {% for post in site.posts limit: 30 %}
     <a id="post-list-title" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
         <h2 ><b>{{ post.title }}</b></h2>
     </a>
@@ -21,5 +21,5 @@ layout: main
     <!-- </div> -->
     <br><br>
     <!-- <a href="https://gplinks.in/ref/asifthen00b"><img src="https://image.ibb.co/dyqKyo/728x90.png" title="Make short links and earn the biggest money" /></a> -->
-    
+    {% include adsense.html %}
 </div>
