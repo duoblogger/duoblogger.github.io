@@ -1,35 +1,50 @@
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{"/assets/main.css" | relative_url }}">
+  <link
+    rel="shortcut icon"
+    href="{{ site.baseurl }}/favicon.ico"
+    type="image/x-icon"
+  />
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <link rel="stylesheet" href="{{"/assets/main.css" | relative_url }}">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{"/assets/bootstrap.min.css" | relative_url }}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script data-ad-client="ca-pub-8949878373616356" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{"/assets/bootstrap.min.css" | relative_url }}"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous">
+  <script
+    data-ad-client="ca-pub-8949878373616356"
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'UA-155290196-1');
-</script> {% endcomment %}
+    gtag("config", "UA-155290196-1");
+  </script>
+  {% endcomment %}
 
-    <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
-  
-</script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-        });
-    </script>
+  <script
+    type="text/javascript"
+    async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+  ></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+  </script>
 
-    <title>
-        {% if page.title %}
-          {{ page.title | escape }} - {{ site.title | escape }}
-        {% else %}
-          {{ site.title | escape }}
-        {% endif %}
-    </title>
+  <title>
+    {% if page.title %} {{ page.title | escape }} - {{ site.title | escape }} {%
+    else %} {{ site.title | escape }} {% endif %}
+  </title>
 </head>
