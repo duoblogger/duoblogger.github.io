@@ -1,49 +1,32 @@
 <!DOCTYPE html>
 
 <html>
+  {% include head.html %}
 
-{% include head.html %}
-
-<body>
+  <body>
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
-  {% include navbar.html %}
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"
+    ></script>
+    {% include navbar.html %} {% include sitename.html %}
 
-  {% include sitename.html %}
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-7">
+        {{ content }}
 
-  <div class="row">
-        <div class="col-md-1">
-         
-        </div>
-        <div class="col-md-7">
-            {% comment %} <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- banner -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8949878373616356"
-                 data-ad-slot="6868320553"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script> {% endcomment %}
-            {{ content }}
+        <hr />
+      </div>
+      <div class="col-md-4">
+        <!-- <div class="affix"> -->
+        {% include sidebar.html %}
+        <!-- </div>        -->
+      </div>
+    </div>
 
-            <hr>
-            
-        </div>
-        <div class="col-md-4">
-            <!-- <div class="affix"> -->
-            {% include sidebar.html %} 
-            <!-- </div>        -->
-        </div>
-  </div>
-
-  {% include footer.html %}
-
-  {% include scripts.html %}
-
-
-</body>
-
+    {% include footer.html %} {% include scripts.html %}
+  </body>
 </html>

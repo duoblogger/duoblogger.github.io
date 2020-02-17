@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 
 <html>
+  {% include head.html %}
 
-{% include head.html %}
-
-<body>
+  <body>
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
-  {% include navbar.html %}
-
-  {% include sitename.html %}
-  <div class="container">
-    <div class="alert alert-success" role="alert">
-        যারা নতুন শুরু করেছো এবং কোথা থেকে কীভাবে শুরু করা উচিৎ সেটা বুঝতে পারছো না তারা <a href="https://www.facebook.com/notes/ahnaf-shahriar/what-to-do-to-learn-competitive-programming-maybe-thinking/209089306770671/" style="color:red;text-decoration:none;" target="_blank">এই লিংক</a> থেকে নোটটি দেখে নাও। এটি কাজ করার কথা :3 
-    </div> 
-  </div>
-  <div class="row">
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"
+    ></script>
+    {% include navbar.html %} {% include sitename.html %}
+    <div class="container">
+      <div class="alert alert-success" role="alert">
+        যারা নতুন শুরু করেছো এবং কোথা থেকে কীভাবে শুরু করা উচিৎ সেটা বুঝতে পারছো
+        না তারা
+        <a
+          href="https://www.facebook.com/notes/ahnaf-shahriar/what-to-do-to-learn-competitive-programming-maybe-thinking/209089306770671/"
+          style="color:red;text-decoration:none;"
+          target="_blank"
+          >এই লিংক</a
+        >
+        থেকে নোটটি দেখে নাও। এটি কাজ করার কথা :3
+      </div>
+    </div>
+    <div class="row">
       <!-- <div class="col-md-1">
           <!-- <a href="https://gplinks.in/ref/asifthen00b"><img style="width: 100%;" src="https://image.ibb.co/ejQoPT/250x250.png" title="Make short links and earn the biggest money" /></a> -->
-          <!-- <a href="https://gplinks.in/ref/asifthen00b"></a><img style="width: 100%;" src="https://image.ibb.co/hLGEW8/160x600.png" title="Make short links and earn the biggest money" /></a> 
+      <!-- <a href="https://gplinks.in/ref/asifthen00b"></a><img style="width: 100%;" src="https://image.ibb.co/hLGEW8/160x600.png" title="Make short links and earn the biggest money" /></a> 
 
 
        </div> -->
-        <div class="col-md-8">
-            {% comment %} <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- banner -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8949878373616356"
-                 data-ad-slot="6868320553"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script> {% endcomment %}
-            {{ content }}
-        </div>
-        <div class="col-md-4">
-            <!-- <div class="affix"> -->
-            {% include sidebar.html %} 
-            <!-- </div>        -->
-        </div>
-  </div>
+      <div class="col-md-8">
+        {{ content }}
+      </div>
+      <div class="col-md-4">
+        <!-- <div class="affix"> -->
+        {% include sidebar.html %}
+        <!-- </div>        -->
+      </div>
+    </div>
 
-  {% include footer.html %}
-
-  {% include scripts.html %}
-
-
-</body>
-
+    {% include footer.html %} {% include scripts.html %}
+  </body>
 </html>
