@@ -9,8 +9,6 @@ subtitle: কোডফোর্সেসে আমরা নিয়মিত প�
 # background: '/img/somehow.png'
 ---
 
-<div class="post-div">
-
 ## Problem 1 : Very Hard Problem
 
 [Problem Description](/html-statements/Statements.html)
@@ -181,5 +179,3 @@ ll solve(int pos, int cur)
 ```
 
 সবাইকে ধন্যবাদ।
-
- </div>
