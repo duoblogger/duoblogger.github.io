@@ -3,7 +3,7 @@ mathjax: true
 layout: post
 title: Disjoint Set Union (Rank Compression)
 author: Ahnaf Shahriar Asif
-tags: [dsu, tree, Data Structure]
+tags: [dsu, Trees, Data Structure]
 subtitle: Disjoint Set Union(DSU) সম্পর্কে আমরা মোটামুটি সবাই কমবেশি জানি। ডাটা স্ট্রাকচার-অ্যালগরিদম জগতের সবথেকে মজার এবং রহস্যময় জিনিসগুলোর মধ্যে একটি। এটির কাজকর্ম দেখলে মনে হয় যাদুর খেলা দেখছি। আমার নিজের সবথেকে প্রিয় ডাটা-স্ট্রাকচার হলো DSU. আজকে আমি DSU নিয়ে কি কি করা যায় এবং কেমন ধরনের সমস্যা এটি দিয়ে সল্ত করা যায় সেটি দেখবো। এটি কেন একটি জাদুকরী  ডাটা স্ট্রাকচার সেটিও আমরা খুব তাড়াতাড়িই জানতে পারবো। তাই দেরি না করে শুরু করা যাক।
 # background: '/img/somehow.png'
 ---
