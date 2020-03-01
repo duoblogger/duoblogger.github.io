@@ -24,9 +24,9 @@ subtitle: আগের পোস্টে আমি DSU এর Rank Compression 
 আমি আশা করছি উপরের Pre-requirements কম্প্লিট করে ফেলেছ। এবার আমরা একটু জেনে নেই পাথ কম্প্রেশন কি। তার আগে একটু মনে করে নেই Rank Compression কি ছিল। মূলত আমরা Union করার সময় যে ট্রি এর সাইজ বড় সেটির প্যারেন্টকে মূল প্যারেন্ট বানাচ্ছিলাম। আর সেটির জন্য আমাদের ট্রি এর ম্যাক্সিমাম height ছিল $O( \log{n})$। তাই m বার অপারেশন চালালে complexity হয় $O(m \log{n})$। এখন, পাথ কম্প্রেশন হলো, আমরা যখন নিচ থেকে উপরে যাবো রিকার্শন করে, তখন আমরা প্যারেন্ট আপডেট করতে থাকবো। অর্থাৎ, অনেকটা নিচের মতো করবো।
 
 ```cpp
-void Union(int x,int y){
-    parent[Find(x)] = Find(y); // only path compression (just for understanding)
-    // we would check something like if(size[x]>size(y))swap(x,y) for rank and path compression
+void Find(int u){
+    if(u == parent[u])return u;
+    return parent[u] = Find(parent[u]);// this is the path compression
 }
 ```
 
