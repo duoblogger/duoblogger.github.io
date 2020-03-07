@@ -261,7 +261,7 @@ table,
 th,
 td {
   /* width: 100%; */
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid rgb(1, 30, 94);
   border-collapse: border-collapse;
 }
 th,
