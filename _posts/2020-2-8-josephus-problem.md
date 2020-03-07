@@ -52,19 +52,19 @@ subtitle: Josephus Problem হলো গনিতের জগতে একট�
     <td width="20%">$f(n)$</td>
     <td width="5%">1</td>
     <td width="5%">1</td>
+    <td width="5%">3</td>
     <td width="5%">1</td>
+    <td width="5%">3</td>
+    <td width="5%">5</td>
+    <td width="5%">7</td>
     <td width="5%">1</td>
-    <td width="5%">1</td>
-    <td width="5%">1</td>
-    <td width="5%">1</td>
-    <td width="5%">1</td>
-    <td width="5%">1</td>
-    <td width="5%">1</td>
-    <td width="5%">1</td>
-    <td width="5%">1</td>
-    <td width="5%">1</td>
-    <td width="5%">1</td>
-    <td width="5%">1</td>
+    <td width="5%">3</td>
+    <td width="5%">5</td>
+    <td width="5%">7</td>
+    <td width="5%">9</td>
+    <td width="5%">11</td>
+    <td width="5%">13</td>
+    <td width="5%">15</td>
     <td width="5%">1</td>
   </tr>
 </table>
