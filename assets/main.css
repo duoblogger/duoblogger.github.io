@@ -260,12 +260,12 @@ h6 {
 table,
 th,
 td {
-  width: 100%;
+  /* width: 100%; */
   border: 1px solid black;
   border-collapse: border-collapse;
 }
 th,
 td {
-  /* padding: 5px;
-  text-align: center; */
+  padding: 5px;
+  text-align: center;
 }
