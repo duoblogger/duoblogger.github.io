@@ -49,8 +49,8 @@ subtitle: Josephus Problem হলো গনিতের জগতে একট�
     <th width="5%">16</th>
   </tr>
   <tr>
-    <td>$f(n)$</td>
-    <td width="20%">1</td>
+    <td width="20%">$f(n)$</td>
+    <td width="5%">1</td>
     <td width="5%">1</td>
     <td width="5%">1</td>
     <td width="5%">1</td>
