@@ -29,6 +29,7 @@ layout: main_page
     </script>
     <!-- This is in-article ad finished -->
     {{content}}
+
     <!-- In article ad started -->
     <script
       async
@@ -47,7 +48,7 @@ layout: main_page
     </script>
     <!-- This is in-article ad finished -->
   </div>
-  {% comment %} {% include adsense.html %} {% endcomment %}
+
   <div
     class="fb-comments"
     data-href="https://duoblogger.github.io/{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
