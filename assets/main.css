@@ -1,5 +1,10 @@
 /* // @import "styles"; */
 
+p {
+  letter-spacing: 10px;
+  font-size: 20px;
+}
+
 #button-tag {
   /* //background-color: rgb(142, 248, 128);
     //padding: 5px;
