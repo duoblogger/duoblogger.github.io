@@ -1,8 +1,9 @@
 /* // @import "styles"; */
 
 p {
-  letter-spacing: 10px;
+  /* letter-spacing: 10px; */
   font-size: 20px;
+  line-height: 20px;
 }
 
 #button-tag {
