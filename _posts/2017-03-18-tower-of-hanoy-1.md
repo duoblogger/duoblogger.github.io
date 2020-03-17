@@ -80,7 +80,7 @@ pic 2 , fix third bit and solve for 2. so fixed leftmost bit and solve(n-1) type
 
 এবার আমরা এটা শিউর যে আমাদের রিকার্শন সঠিক। এবার রিকার্শন থেকে $2^n-1$ এর ফর্মুলা প্রমান করবো।
 
-<div style="font-size: 18px;">
+<div style="font-size: 22px;">
 $$
 g(0) = 0\\
 g(1) = 1\\ \\
