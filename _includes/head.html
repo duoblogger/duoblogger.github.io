@@ -1,5 +1,8 @@
 <head>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  {% if page.metaimage %}
+  <meta property="og:image" content="{{page.metaimage}}" />
+  {% endif %}
   <link
     rel="address bar icon"
     href="https://duoblogger.github.io/favicon.ico"
