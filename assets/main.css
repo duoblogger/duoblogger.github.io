@@ -1,6 +1,6 @@
 /* // @import "styles"; */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (min-width: 800px) {
   p {
     font-size: 20px;
     line-height: 35px;
