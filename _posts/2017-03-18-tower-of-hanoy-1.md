@@ -82,17 +82,19 @@ pic 2 , fix third bit and solve for 2. so fixed leftmost bit and solve(n-1) type
 
 <div style="font-size: 22px;">
 $$
-g(0) = 0\\
-g(1) = 1\\ \\
-g(x) = 2g(x-1)+1\\
-g(x) = 2 \left\{ 2g(x-2)+1\right\}+1\\
-g(x) = 4g(x-2)+2+1\\
-g(x) = 8g(x-3)+4+2+1\\
+\begin{aligned}
+g(0) &= 0\\
+g(1) &= 1\\ \\
+g(x) &= 2g(x-1)+1\\
+g(x) &= 2 \left\{ 2g(x-2)+1\right\}+1\\
+g(x) &= 4g(x-2)+2+1\\
+g(x) &= 8g(x-3)+4+2+1\\
 ...\\
 ...\\
-g(x) = 2^{x-1} g(1)+ \Big(2^{x-1}-1 \Big)\\
-g(x) = 2 \times 2^{x-1} - 1\\
-g(x) = 2^x - 1\\
+g(x) &= 2^{x-1} g(1)+ \Big(2^{x-1}-1 \Big)\\
+g(x) &= 2 \times 2^{x-1} - 1\\
+g(x) &= 2^x - 1\\
+\end{aligned}
 $$
 </div>
 
