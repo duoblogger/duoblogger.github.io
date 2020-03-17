@@ -23,26 +23,30 @@ permalink: /tower-of-hanoy-1/
 প্রথমেই আশা করছি তোমরা উপরের pre-requirements শেষ করেছো। না করলে দয়া করে সেগুলো একটু দেখে নাও। তাহলে তোমাদেরই বুঝতে সুবিধা হবে। যাই হোক আমরা আগে ধাঁধাটি দেখে নেই। নিচের ছবিটি লক্ষ কর।
 
 <div style="text-align:center;">
-<img src="https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/tower-of-hanoy-1.jpg" alt="pic 3" width="100%" height="auto" />
+<img src="https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/tower-of-hanoy-1.jpg" alt="pic 3" width="60%" height="auto" />
 </div>
+<br>
 
 উপরের ছবির মতো তোমাকে তিনটা পিলার দেয়া আছে এবং প্রথম পিলারে ছবির মতো $n$ টা ডিস্ক দেয়া আছে, সাইজ অনুসারে সাজানো। এবার তোমার কাজ হলো প্রথম পিলারের ডিস্ক গুলোকে অন্য যেকোন একটা পিলারে নিতে হবে। শর্ত হলো শুধু কোনো পিলারের উপরের ডিস্কটা সরাতে পারবে আর একটা ছোট ডিস্কের উপর বড় ডিস্ক রাখতে পারবেনা। তোমাকে বলতে হবে এটি করা সম্ভব কিনা। আর যদি সম্ভব হয় তাহলে সর্বনিম্ন কতগুলো মুভ লাগবে সেটিও বলতে হবে। যদি বুঝে না থাকো তাহলে নিচের ছবি তিনটা দেখো।
 
 <div style="text-align:center;">
 <img src="https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/tower-of-hanoy-2.jpg" alt="pic 3" width="100%" height="auto" />
 </div>
+<br>
 
 এখন আমরা এটি সমাধান করবো। এরকম সমস্যা সমাধান করার প্রথম ধাপ হলো ছোট মান নিয়ে একটু চেষ্টা করে দেখা। $n = 0$ হলে আমাদের 0 টা মুভ লাগবে। $n=1$ হলে আমাদের 1 টা মুভ লাগবে। $n = 2$ এর জন্য আমরা নিচের ছবিতে দেখাচ্ছি।
 
 <div style="text-align:center;">
 <img src="https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/tower-of-hanoy-for-2.jpg" alt="pic 3" width="100%" height="auto" />
 </div>
+<br>
 
 ওকে, দেখাই যাচ্ছে $n = 2$ এর জন্য আমাদের উত্তর আসছে 3। এবার 3 এর জন্য সিমুলেট করে দেখি।
 
 <div style="text-align:center;">
 <img src="https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/tower-of-hanoy-3.jpg" alt="pic 3" width="100%" height="auto" />
 </div>
+<br>
 
 $n = 3$ এর জন্য উত্তর আসছে 7। এবার যারা বুদ্ধিমান তারা ঠিকই বুঝে ফেলেছ $n$ এর জন্য আমাদের উত্তর আসছে $2^n - 1$। এটা কিন্তু খুব সহজেই Induction দিয়ে প্রমান করে ফেলা যাবে। কিন্তু আমরা বুঝতে চাচ্ছি এখানে এটা কোথা থেকে এলো। হুট করে এখানে 2 এর পাওয়ার আসার কারন কি? চলো একটু চিন্তা করা যাক।
 
@@ -66,6 +70,7 @@ $$
 <div style="text-align:center;">
 <img src="https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/tower-of-hanoy-for-the-bits.jpg" alt="pic 3" width="100%" height="auto" />
 </div>
+<br>
 
 এখন ধরে নাও আমাদের একটা বিট নিয়ে নাড়াচাড়া করতে একটা করে মুভ লাগে। তাহলে চিন্তা করো, আমরা 7 বানানোর জন্য কি করছি? $7 = 0111$। তো, আমরা প্রথমে $3 = 0011$ বানাচ্ছি, তারপর এক মুভে একটা left-shift, তাতে এটা হয়ে যাবে $4 = 0100$। তারপর আবার একটা $3 = 0011$ বানাচ্ছি 4 এর বাম পাশের বিটটা ফিক্স করার পর। তাহলে আমরা যদি $n$ বানানোর মুভকে $f(n)$ নাম দেই, তাহলে দেখা যাবে $f(7) = f(3)+1+f(3) = 2f(3)+1$, আবার $f(3) = f(1)+1+f(1) = 2f(1)+1$। প্যাটার্নটা লক্ষ করেছো? এটা আপাতত সরিয়ে রাখি এবং আমাদের মূল সমস্যায় ফেরত যাই।
 
@@ -76,6 +81,7 @@ $$
 <div style="text-align:center;">
 <img src="https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/tower-of-hanoy-recursive-for-3.jpg" alt="pic 3" width="100%" height="auto" />
 </div>
+<br>
 
 ছবিটি খুব মনযোগ দিয়ে দেখো। আমরা যদি 3 কে সরাতে চাই তাহলে আগে আমাদের প্রথম দুইটা ডিস্ক সরাতে হবেই, সরাতে বাধ্য। নাহলে আমরা 3 কে মুভ করাতে পারবোনা। আর 3 কে মুভ করাতে চাইলে বাকি সবগুলো ডিস্ককে একটা মাত্র পিলারেই থাকতে হবে। একাধিক পিলারে ডিস্কগুলো রাখলে 3 কে কিন্তু আমরা কোথাও রাখতে পারবোনা কারন এখন পর্যন্ত বের করা হয়েছে এরকম সব ডিস্কের সাইজই 3 এর থেকে কম। আর বাকি ডিস্ক গুলোকে যদি একটা পিলারেই রাখতে হয় তাহলে তাদের সর্ট করেই রাখতে হবে। নাহলে রাখা যাবেনা, কারন ছোটোর উপর বড় ডিস্ক রাখা যাবেনা। তাই উপরে যে পর্যন্ত করেছি, ওই পর্যন্ত ওটাই অপটিমাল।
 
@@ -84,6 +90,7 @@ $$
 <div style="text-align:center;">
 <img src="https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/tower-of-hanoy-rest-of-the-recursion.jpg" alt="pic 3" width="100%" height="auto" />
 </div>
+<br>
 
 তাহলে $n$ টির জন্য মুভ যদি আমরা $g(n)$ ধরি তাহলে $g(n) = g(n-1)+1+g(n-1) = 2g(n-1)+1$। এবার আমাদের আগের বের করা ফর্মুলার কথা চিন্তা করো। ওখানে আমরা দেখেছিলাম $f(7) = f(3)+1+f(3) = 2f(3)+1$। এবার দেখো। আমরা 3 এর জন্য হাতে বের করেছিলাম, উত্তর হয়েছিল 7, তাহলে $g(3) = 7$ আর $g(2) = 3$। তাহলে $g(n) = g(n-1)+1+g(n-1)$ এ $n = 3$ বসালে হয়ে যাচ্ছে $f(g(3)) = f(g(3-1))+1+f(g(3-1))$ বা, $f(7) = f(3)+1+f(3)$। একদম কাটায় কাটায় সেইম জিনিস।
 
