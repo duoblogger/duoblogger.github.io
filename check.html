@@ -1,0 +1,8 @@
+---
+permalink: /mama/
+---
+
+<div>
+  {% capture categories %} {%- for tag in site.category -%} {{tag}}, {%- endfor
+  -%} {%endcapture%} {{categories}}
+</div>
