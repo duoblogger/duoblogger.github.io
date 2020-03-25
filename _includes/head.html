@@ -1,30 +1,22 @@
 <head>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://duoblogger.github.io/duoblogger-kala/assets/css/style.css" />
+  <link rel="stylesheet" href="https://duoblogger.github.io/duoblogger-kala/assets/css/single.css" />
+  <!-- <script src="{{"/assets/js/app.js" | relative_url }}"></script> -->
+
+  <!-- eta setup deya lagbe age -->
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  <link rel="address bar icon" href="https://duoblogger.github.io/favicon.png" />
+  <!-- ekhane setup shesh -->
+
   {% if page.metaimage %}
   <meta property="og:image" content="{{page.metaimage}}" />
   {% endif %}
-  <link
-    rel="address bar icon"
-    href="https://duoblogger.github.io/favicon.ico"
-  />
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-  <link rel="stylesheet" href="{{"/assets/main.css" | relative_url }}" /> <link
-  rel="stylesheet" href="{{"/assets/posts.css" | relative_url }}">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{{"/assets/bootstrap.min.css" | relative_url }}"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-  crossorigin="anonymous">
-  <script
-    data-ad-client="ca-pub-8949878373616356"
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-  ></script>
+  <script data-ad-client="ca-pub-8949878373616356" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -35,17 +27,13 @@
     gtag("config", "UA-155290196-1");
   </script>
 
-  <script
-    type="text/javascript"
-    async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
-  ></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     });
   </script>
-
   <title>
     {% if page.title %} {{ page.title | escape }} - {{ site.title | escape }} {%
     else %} {{ site.title | escape }} {% endif %}

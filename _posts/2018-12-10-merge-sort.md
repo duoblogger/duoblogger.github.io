@@ -4,24 +4,13 @@ layout: post
 title: merge Sort
 # mathjax: true
 author: Ahnaf Shahriar Asif
+Difficulty: Beginner
 # background: '/img/somehow.png'
 subtitle: Merge sort হলো এখন পর্যন্ত আবিষ্কৃত সবথেকে এফিশিয়েন্ট সর্টিং অ্যালগোরিদম গুলার মধ্যে একটা। এটির কম্প্লেক্সিটি $O(n log n)$। আমরা এই পোস্টে Merge sort কীভাবে কাজ করে সেই সম্পর্কে বিস্তারিত জানবো। যদিও Merge sort সরাসরি আমাদের দরকার পড়বেনা, কারন C++ এ  বিল্টইন ফাংশন আছে, কিন্তু এটি কীভাবে কাজ করে সেটি মার্জ সর্ট ট্রি শেখার সময় কাজে লাগবে।
 tags: [Sorting]
-category: something
----<!-- This is also a comment in markdown -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- add2 -->
+categories: [sorting, Binary Search, two pointer]
 
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8949878373616356"
-     data-ad-slot="7315241833"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+---
 
 আমরা সবাই জানি, মাঝে মাঝে অনেক দরকারে আমাদেরকে অ্যারে সর্ট করা লাগে, আর সবথেকে ভাল সর্টিং অ্যালগরিদম $$n\log { n }$$ এ কাজ করে। কিন্তু আমরা তো $$O({ n }^{ 2 })$$ এ সর্ট করতে পারি, কিন্তু জানি না, কিভাব $$n\log { n }$$ এ সর্টিং করা যায়। যাই হোক, আজকে আমরা সেটাই জানার চেষ্টা করব।
 

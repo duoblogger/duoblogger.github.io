@@ -1,59 +1,47 @@
 ---
-layout: main_page
+layout: main
 ---
 
-<div class="container">
-  <h3 class="text-center" id="h1_for_my_title"><b>{{page.title}}</b></h3>
-  <p class="text-center" id="author-date-style-post">
-    Posted by <span id="author-name-on-post">{{ page.author }}</span> on {{
-    page.date | date: '%B %d, %Y' }}
-  </p>
-
-  <hr />
-  <div class="container">
-    <!-- In article ad started -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-    ></script>
-    <ins
-      class="adsbygoogle"
-      style="display:block; text-align:center;"
-      data-ad-layout="in-article"
-      data-ad-format="fluid"
-      data-ad-client="ca-pub-8949878373616356"
-      data-ad-slot="3304648902"
-    ></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <!-- This is in-article ad finished -->
-    {{content}}
-
-    <!-- In article ad started -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-    ></script>
-    <ins
-      class="adsbygoogle"
-      style="display:block; text-align:center;"
-      data-ad-layout="in-article"
-      data-ad-format="fluid"
-      data-ad-client="ca-pub-8949878373616356"
-      data-ad-slot="3304648902"
-    ></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <!-- This is in-article ad finished -->
-  </div>
-
-  <div
-    class="fb-comments"
-    data-href="https://duoblogger.github.io/{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
-    data-width="100%"
-    data-numposts="15"
-  ></div>
-  <div class="row"></div>
+<div class="single-content">
+    <h2 class="single-h2"> {{page.title}}</h2>
+    <h5 class="single-h5">
+        Written by {{page.author}} on {{ page.date | date: '%B %d, %Y' }}
+    </h5>
+    <span id="single-categories" class="single-category">
+        {% for cat in page.categories %}
+        {{cat}} {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    </span>
+    <br />
+    <h3><button class="btn {{page.Difficulty}}">{{page.Difficulty}} Difficulty</button></h3>
+    <br />
+    <div class="fb-like" data-href="{{ page.url | prepend: site.baseurl | replace: '//', '/' }}" data-width=""
+        data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+    <br />
+    <br><br>
+    <hr />
+    <div class="page-content">
+        {{ content }}
+        <br><br>
+        <!-- <h1>{{page.tags[0]}}</h1> -->
+        <h3>একই ক্যাটাগরির নিচের পোস্ট(গুলি) পড়ে দেখতে পারো:</h3>
+        <br>
+        <ol>
+            {% for post in site.posts%}
+            {% if post.tags[0]==page.tags[0] and post.title != page.title %}
+            <li><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ol>
+        <br><br>
+        <h3>একই Difficulty এর বাকি পোস্টগুলোর লিস্ট দিয়ে দিচ্ছি, পড়ে দেখতে পারো:</h3>
+        <br>
+        <ol>
+            {% for post in site.posts%}
+            {% if post.tags[0] != page.tags[0] and post.title != page.title and page.Difficulty == post.Difficulty %}
+            <li><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ol>
+    </div>
 </div>

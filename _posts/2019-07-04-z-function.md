@@ -4,6 +4,8 @@ title: Z Function
 mathjax: true
 author: Munim Hasan Wasi
 tags: [Strings]
+categories: [strings, sorting, searching]
+Difficulty: Beginner
 background: "/img/somehow.png"
 ---
 

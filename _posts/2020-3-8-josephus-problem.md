@@ -3,8 +3,9 @@ matdjax: true
 layout: post
 title: Josephus Problem
 author: Ahnaf Shahriar Asif
+Difficulty: Beginner
 tags: [Concrete Matdematics]
-
+cetegories: [Concrete Mathematics, Recursion, Number theory]
 subtitle: Josephus Problem হলো গনিতের জগতে একটি সুপরিচিত সমস্যা। এই সমস্য়াটি নিয়ে একটি গল্পও প্রচলিত আছে। গল্পের নায়ক জোসেফাস এক দারুন গানিতিক সমস্য়ার সমাধানের মাধ্য়মে প্রানে বেঁচে গিয়েছিলেন। তবে সবথেকে সুন্দর বিষয়টি হচ্ছে প্রব্লেমটি নিজেই। এই জোসেফাস প্রব্লেমের সলিউশনটা অনেকে দারুন এবং এটির আইডিয়া ব্যাবহার করে আমরা অনেক ধরনের সমস্যা সমাধান করতে পারি। তাই দেরি না করে শুরু করা যাক।
 # background: '/img/somehow.png'
 ---

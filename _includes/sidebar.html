@@ -1,92 +1,64 @@
-<div class="container">
-    <!-- <div class="jumbotron">
-        <a href="fb://page/du0bl0gger/addfan">Like Our Page </a>
-    </div> -->
-    <div class="fb-like" data-href="https://www.facebook.com/du0bl0gger/" data-width="300" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-    <br>
-</div>
-<hr>
+<aside>
+    <div class="sidebar">
+        <section class="authors">
+            <h3>Authors</h3>
+            <ul class="authors-list">
+                <li><a target="_blank" href="https://www.facebook.com/ahnaf.shahriar.7121">Ahnaf Shahriar Asif</a></li>
+                <li><a target="_blank" href="https://www.facebook.com/HBKWasi">Munim Hasan Wasi</a></li>
+            </ul>
+        </section>
+        <div class="ads">
+            Google Ad Here
+        </div>
+        <section class="category">
+            <h3>Category</h3>
 
-<div class="container">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- responsive square ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8949878373616356"
-     data-ad-slot="9486913877"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<br>
-<br>
-
-<div class="container">
-    <div class="jumbotron">
-        <h4 class="text-center" id="h1_for_my_title"><b>Authors</b></h4>
-        <hr> 
-        <a   id="h1_for_my_title" href="https://www.facebook.com/ahnaf.shahriar.7121" target="_blank"><b>Ahnaf Shahriar Asif (6 Posts)</b></a>
-        <hr>
-        <a  id="h1_for_my_title" href="https://www.facebook.com/HBKWasi" target="_blank"><b>Munim Hasan Wasi (3 Posts)</b></a>
-
-    </div>
-</div>
-
-<div class="container">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- responsive square ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8949878373616356"
-     data-ad-slot="9486913877"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-
-<div class="container">
-    <div class="jumbotron">
-        <h4 class="text-center" id="h1_for_my_title"><b>Category</b></h4><hr>
-        {%- capture site_tags -%}
-        {%- for tag in site.tags -%}
+            {%- capture site_tags -%}
+            {%- for tag in site.tags -%}
             {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
-        {%- endfor -%}
-        {%- endcapture -%}
-        {%- assign tags_list = site_tags | split:',' | sort -%}
-        
-        {%- for tag in tags_list -%}
-            <!-- <a id="button-tag" href="#{{- tag -}}" class="btn btn-primary" ></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a> -->
-            
-            <!-- <div class="dropdown">
-                <a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                {{- tag -}}&nbsp;({{site.tags[tag].size}})
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Link 1</a>
-                    <a class="dropdown-item" href="#">Link 2</a>
-                    <a class="dropdown-item" href="#">Link 3</a>
-                </div>
-            </div> -->
-            <h6 id="h1_for_my_title"><b>{{- tag -}}&nbsp;({{site.tags[tag].size}})<b></h6>
-            {%- for post in site.tags[tag] -%}
-                <div class="tag-entry">
-                    <a class="" id="taglist" href="{{ post.url | relative_url }}">{{- post.title -}}</a>
-                    <!-- <div class="entry-date">
-                        <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: site.date_format -}}</time>
-                    </div> -->
-                </div>  
             {%- endfor -%}
-            <hr>
-        {%- endfor -%}
-    </div>
-    <!-- <div class="text-center"><h2 style="color: red;"><b>Earn $10 Per Day !!!</b></h2></div> -->
+            {%- endcapture -%}
+            {%- assign tags_list = site_tags | split:',' | sort -%}
 
-    <!-- <a href="https://gplinks.in/ref/asifthen00b"><img src="https://image.ibb.co/hspF4T/900x250.png" title="Make short links and earn the biggest money" style="width: 100%;" /></a> -->
-    <!-- <b class="" style="color: red;">Earn $10 Per Day !!!</b> -->
-    <!-- <div class="text-center"><h2 style="color: red;"><b>Earn $10 Per Day !!!</b></h2></div> -->
-    
-</div>
+            {%- for tag in tags_list -%}
+            <h4>{{- tag -}} ({{site.tags[tag].size}})</h4>
+            <ul class="category">
+                {%- for post in site.tags[tag] -%}
+                <li><a href="{{ post.url | relative_url }}">{{post.title}}</a></li>
+                {%- endfor -%}
+            </ul>
+            {%- endfor -%}
+        </section>
+        <div class="ads">
+            Google Ad Here
+        </div>
+        <section class="category">
+            <h3>Articles By Difficulty</h3>
+            <h4>Beginner</h4>
+            <ul class="category">
+                {% for post in site.posts %}
+                {% if post.Difficulty == "Beginner" %}
+                <li><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            <h4>Intermediate</h4>
+            <ul class="category">
+                {% for post in site.posts %}
+                {% if post.Difficulty == "Intermediate" %}
+                <li><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></li>
+                {% endif %}
+                {% endfor %}
+
+            </ul>
+            <h4>Hard</h4>
+            <ul class="category">
+                {% for post in site.posts %}
+                {% if post.Difficulty == "Hard" %}
+                <li><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</aside>

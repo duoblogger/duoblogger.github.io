@@ -3,9 +3,11 @@ layout: post
 title: Convex Hull
 mathjax: true
 author: Munim Hasan Wasi
+Difficulty: Intermediate
 subtitle: আমরা সবাই কনভেক্স হাল কি জিনিস সেটা জানি। তুমি না জানলে গুগলে সার্চ করে দেখে নাও। আমরা এই পোস্টে শিখবো কীভাবে এফিশিয়েন্টলি কনভেক্স হাল বেড় করতে হয়। 
 # background: '/img/somehow.png'
 tags: [Geometry] 
+categories: [Geometry]
 ---
 
 আজকে আমরা অনেকগুলো কার্তেসিয় স্থানাঙ্ক দেওয়া থাকলে সেটার কনভেক্স হাল বের করা শিখবো।

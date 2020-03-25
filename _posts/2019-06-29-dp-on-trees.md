@@ -4,10 +4,12 @@ title: Dp on Trees
 mathjax: true
 author: Ahnaf Shahriar Asif
 tags: [Dynamic Programming]
+Difficulty: Hard
 mathjax: true
 subtitle: আমরা এর আগে ব্যাসিক ডিপি সম্পর্কে জেনেছি। আজকে জানবো ট্রিতে কীভাবে ডাইনামিক প্রোগ্রামিং করতে হয়। এটি পড়তে হলে ব্যাসিক ডাইনামিক প্র‌োগ্রামিং আর ট্রি-গ্রাফ সম্পর্কে ধারনা থাকতে হবে। 
 # permalink: /dp-on-tree/
 # background: '/img/somehow.png'
+categories: [Dynamic Programming, Graph, Tree, Math, Number theory]
 ---
 
 ## Introduction <a name="Introduction"></a>

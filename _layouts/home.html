@@ -2,34 +2,33 @@
 layout: main
 ---
 
-<div class="container">
-    <!-- <div class="jumbotron"> -->
-    {% for post in site.posts limit: 30 %}
-    <a id="post-list-title" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-        <h2 ><b>{{ post.title }}</b></h2>
-    </a>
-    <p id="author-date-style-home"> Posted by &nbsp; <span id="author-name-on-home-page">{{ post.author }}</span> &nbsp; on {{ post.date | date: '%B %d, %Y' }}</p>
-    {% if post.subtitle %}
-        <h6 id="subtitle" class="post-subtitle">{{ post.subtitle }}<a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">.....[Read Details]</a></h6>
-        {% else %}
-        <h6 id="subtitle" class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 100 }}<a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">.....[Read Details]</a></h6>
-        {% endif %}
-    <hr>
-     {% endfor %}
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-fb+5w+4e-db+86"
-     data-ad-client="ca-pub-8949878373616356"
-     data-ad-slot="8500107595"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-     <!-- <div class="clearfix"> -->
-        <a  href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
-    <!-- </div> -->
-    <br><br>
-    <!-- <a href="https://gplinks.in/ref/asifthen00b"><img src="https://image.ibb.co/dyqKyo/728x90.png" title="Make short links and earn the biggest money" /></a> -->
-    {% comment %} {% include adsense.html %} {% endcomment %}
+{% for post in site.posts limit: 6 %}
+<div class="single-content">
+    <h2>{{post.title}}</h2>
+    <h5>Posted by {{ post.author }} on {{ post.date | date: '%B %d, %Y' }}</h5>
+
+    <!-- <span id="categories">{{post.categories}}</span> -->
+    <p id="categories">
+        {% for cat in post.categories %}
+        {{cat}} {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    </p>
+    <br />
+    <h3>
+        <button class="btn {{post.Difficulty}}">{{post.Difficulty}} Difficulty</button>
+    </h3>
+
+    <br />
+    <div class="fb-like" data-href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" data-width=""
+        data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+    <p>
+        {{ post.subtitle }}
+        <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" target="_blank">.........[Read More]</a>
+    </p>
 </div>
+
+{% endfor %}
+
+<p style="text-align: center; font-size: 30px;"><a href="/posts/"
+        style="text-align: center; color: red; font-weight: bolder;">................View All
+        Posts.............</a></p><br><br>

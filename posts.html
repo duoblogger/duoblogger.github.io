@@ -1,71 +1,31 @@
 ---
 layout: main
+permalink: /posts/
 ---
 
-<div class="container">
-  <!-- <div class="jumbotron"> -->
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-  ></script>
-  <ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-fb+5w+4e-db+86"
-    data-ad-client="ca-pub-8949878373616356"
-    data-ad-slot="8500107595"
-  ></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  <br />
-  <hr />
-  {% for post in site.posts %}
-  <a
-    id="post-list-title"
-    href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"
-  >
-    <h2><b>{{ post.title }}</b></h2>
-  </a>
-  <p id="author-date-style-home">
-    Posted by <span id="author-name-on-home-page">{{ post.author }}</span> on {{
-    post.date | date: '%B %d, %Y' }}
+{% for post in site.posts limit: 569 %}
+<div class="single-content">
+  <h2>{{post.title}}</h2>
+  <h5>Posted by {{ post.author }} on {{ post.date | date: '%B %d, %Y' }}</h5>
+
+  <!-- <span id="categories">{{post.categories}}</span> -->
+  <p id="categories">
+    {% for cat in post.categories %}
+    {{cat}} {% unless forloop.last %},{% endunless %}
+    {% endfor %}
   </p>
-  {% if post.subtitle %}
-  <h6 id="subtitle" class="post-subtitle">
-    {{ post.subtitle }}<a
-      href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"
-      >.....[Read Details]</a
-    >
-  </h6>
-  {% else %}
-  <h6 id="subtitle" class="post-subtitle">
-    {{ post.excerpt | strip_html | truncatewords: 100 }}<a
-      href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"
-      >.....[Read Details]</a
-    >
-  </h6>
-  {% endif %}
-  <hr />
-  {% endfor %}
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-  ></script>
-  <ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-fb+5w+4e-db+86"
-    data-ad-client="ca-pub-8949878373616356"
-    data-ad-slot="8500107595"
-  ></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  <!-- <div class="clearfix"> -->
-  <!-- <a  href="{{"/posts" | relative_url }}">View All Posts &rarr;</a> -->
-  <!-- </div> -->
-  <!-- <br><br> -->
+  <br />
+  <h3>
+    <button class="btn {{post.Difficulty}}">{{post.Difficulty}} Difficulty</button>
+  </h3>
+
+  <br />
+  <div class="fb-like" data-href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" data-width=""
+    data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+  <p>
+    {{ post.subtitle }}
+    <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" target="_blank">.........[Read More]</a>
+  </p>
 </div>
+
+{% endfor %}
