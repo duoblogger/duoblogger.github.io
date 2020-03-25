@@ -3,7 +3,7 @@ matdjax: true
 layout: post
 title: Tower of Hanoy Part 1
 author: Ahnaf Shahriar Asif
-tags: [Concrete Matdematics]
+tags: [Concrete Mathematics]
 categories: [Concrete Mathematics, Recursion, Number theory]
 Difficulty: Beginner
 metaimage: https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/tower-of-hanoy-for-2.jpg
