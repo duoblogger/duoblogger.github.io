@@ -27,7 +27,11 @@ body {
       grid-template-rows: 50px 260px 80px auto 50px;
   -ms-grid-columns: 69% 31%;
       grid-template-columns: 69% 31%;
-      grid-template-areas: "navbar navbar" "banner banner" "announcement announcement" "main-content sidebar" "footer footer";
+      grid-template-areas: "navbar navbar"
+ "banner banner"
+ "announcement announcement"
+ "main-content sidebar"
+ "footer footer";
 }
 
 body header {
@@ -192,7 +196,7 @@ body main {
 }
 
 body main .single-content {
-  background-color: #3aafa911;
+  background-color: #3aafa900;
   margin: 20px;
   margin-top: 25px;
   padding: 20px;
@@ -396,7 +400,12 @@ aside .sidebar .category h4 {
         grid-template-rows: 50px 260px 80px auto auto 50px;
     -ms-grid-columns: 69% 31%;
         grid-template-columns: 69% 31%;
-        grid-template-areas: "navbar navbar" "banner banner" "announcement announcement" "main-content main-content" "sidebar sidebar" "footer footer";
+        grid-template-areas: "navbar navbar"
+ "banner banner"
+ "announcement announcement"
+ "main-content main-content"
+ "sidebar sidebar"
+ "footer footer";
   }
   body aside {
     padding-left: 20px;
@@ -412,7 +421,12 @@ aside .sidebar .category h4 {
         grid-template-rows: 50px 190px 140px auto auto 50px;
     -ms-grid-columns: 69% 31%;
         grid-template-columns: 69% 31%;
-        grid-template-areas: "navbar navbar" "banner banner" "announcement announcement" "main-content main-content" "sidebar sidebar" "footer footer";
+        grid-template-areas: "navbar navbar"
+ "banner banner"
+ "announcement announcement"
+ "main-content main-content"
+ "sidebar sidebar"
+ "footer footer";
   }
   body p {
     font-size: 16px;
