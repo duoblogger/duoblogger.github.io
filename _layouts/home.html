@@ -4,9 +4,9 @@ layout: main
 
 {% for post in site.posts limit: 6 %}
 <div class="single-content">
-    <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-        <h2>{{post.title}}</h2>
-    </a>
+
+    <h2> <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></h2>
+
     <h5>Posted by {{ post.author }} on {{ post.date | date: '%B %d, %Y' }}</h5>
 
     <!-- <span id="categories">{{post.categories}}</span> -->
