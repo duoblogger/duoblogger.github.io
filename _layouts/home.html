@@ -6,7 +6,8 @@ layout: main
 <div></div>
 <div class="single-content">
     <!-- asldkflaskdflaksdflkasdf   -->
-    <h2> <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></h2>
+    <h2> <a class="home-header" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a>
+    </h2>
 
     <h5>Posted by {{ post.author }} on {{ post.date | date: '%B %d, %Y' }}</h5>
 
