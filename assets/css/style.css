@@ -172,7 +172,7 @@ body .announcement {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #3b945f57;
+  background-color: #5f5f5f50;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -180,7 +180,6 @@ body .announcement {
   padding: 10px;
   font-size: 15px;
   font-weight: bold;
-  color: #03360a;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -293,7 +292,7 @@ aside .sidebar {
 aside .sidebar ul li a {
   font-weight: bolder;
   font-size: 18px;
-  color: #2e2e2e;
+  color: #424242;
 }
 
 aside .sidebar ul li a:hover {
