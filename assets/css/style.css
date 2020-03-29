@@ -205,7 +205,7 @@ body main .single-content h2 {
 body main .single-content h5 {
   font-size: 15px;
   color: #525252;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 body main .single-content h3 {
@@ -227,7 +227,6 @@ body main #categories {
   font-weight: bolder;
   font-size: 18px;
   color: #000e24;
-  padding: 5px;
 }
 
 body footer {
