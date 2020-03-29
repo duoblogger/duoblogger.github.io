@@ -303,6 +303,7 @@ aside .sidebar ul li a:hover {
 }
 
 aside .sidebar section {
+  border: 1px solid black;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -320,6 +321,7 @@ aside .sidebar .authors h3 {
   font-size: 30px;
   text-align: center;
   margin-bottom: 10px;
+  background-color: #bd603b50;
 }
 
 aside .sidebar .authors h4,
