@@ -20,10 +20,6 @@
   list-style: none;
 }
 
-.home-header {
-  color: #181818;
-}
-
 body {
   display: -ms-grid;
   display: grid;
