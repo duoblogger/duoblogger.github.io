@@ -16,12 +16,12 @@ layout: main
         {{cat}} {% unless forloop.last %},{% endunless %}
         {% endfor %}
     </p>
-    <br />
+    <!-- <br /> -->
     <h3>
         <button class="btn {{post.Difficulty}}">{{post.Difficulty}} Difficulty</button>
     </h3>
 
-    <br />
+    <!-- <br /> -->
     <div class="fb-like" data-href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" data-width=""
         data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
     <p>
