@@ -24,14 +24,14 @@ layout: main
         {{ content }}
         <br><br>
         <!-- <h1>{{page.tags[0]}}</h1> -->
-        {% assign cnt = 0%}
+        {% capture cnt %}
         {% for post in site.posts%}
         {% if post.tags[0]==page.tags[0] and post.title != page.title %}
-        {% cnt = cnt+1 %}
+        {{post.title}}
         {% endif %}
         {% endfor %}
 
-        {% if cnt > 0%}
+        {% if cnt%}
 
         <h3>একই ক্যাটাগরির নিচের পোস্ট(গুলি) পড়ে দেখতে পারো:</h3>
         <br>
