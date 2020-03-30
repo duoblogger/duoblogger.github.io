@@ -28,10 +28,11 @@ layout: main
         {% for post in site.posts%}
         {% if post.tags[0]==page.tags[0] and post.title != page.title %}
         {{post.title}}
-        {% endcapture %}
+        {% endif %}
         {% endfor %}
+        {% endcapture %}
 
-        {% if cnt%}
+        {% if cnt %}
 
         <h3>একই ক্যাটাগরির নিচের পোস্ট(গুলি) পড়ে দেখতে পারো:</h3>
         <br>
