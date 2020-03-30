@@ -22,19 +22,14 @@ layout: main
     <hr />
     <div class="page-content">
         {{ content }}
-        <br><br>
-        <!-- <h1>{{page.tags[0]}}</h1> -->
-        {% capture cnt %}
+
         {% for post in site.posts%}
         {% if post.tags[0]==page.tags[0] and post.title != page.title %}
-        {{post.title}}
+        <br><br>
+        <h3>একই ক্যাটাগরির নিচের পোস্ট(গুলি) পড়ে দেখতে পারো:</h3>
+        {% break %}
         {% endif %}
         {% endfor %}
-        {% endcapture %}
-
-        {% if cnt.size > 0 %}
-
-        <h3>একই ক্যাটাগরির নিচের পোস্ট(গুলি) পড়ে দেখতে পারো:</h3>
         <br>
         <ol>
             {% for post in site.posts%}
@@ -44,7 +39,6 @@ layout: main
             {% endfor %}
         </ol>
         <br><br>
-        {% endif %}
 
         <h3>একই Difficulty এর বাকি পোস্টগুলোর লিস্ট দিয়ে দিচ্ছি, পড়ে দেখতে পারো:</h3>
         <br>
