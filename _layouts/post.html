@@ -28,7 +28,7 @@ layout: main
         {% for post in site.posts%}
         {% if post.tags[0]==page.tags[0] and post.title != page.title %}
         {{post.title}}
-        {% endif %}
+        {% endcapture %}
         {% endfor %}
 
         {% if cnt%}
