@@ -5,7 +5,7 @@ title: Basic Dynamic Programming(Part 1)
 mathjax: true
 author: Ahnaf Shahriar Asif
 Difficulty: Intermediate
-ads_niche: 10
+ads_niche: 5
 tags: [Dynamic Programming]
 subtitle: আমরা এই পোস্টে ডাইনামিক প্রোগ্রামিংয়ের ব্যাসিক বিষয়সমূহ জানবো। ডাইনামিক প্রোগ্রামিং কি, ন্যাপসাক, রক ক্লাইম্বিং ইত্যাদি ডিপি সম্পর্কে জানবো, কীভাবে ডিপির কোড লিখতে হয়, কীভাবে অ্যাপ্রোচ করতে হয় এসব নিয়ে আলোচনা করবো এবং কিছু জার ডিপি সমস্যা সমাধান করবো। 
 categories: [Dynamic Programming]
