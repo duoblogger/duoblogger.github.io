@@ -60,5 +60,12 @@
                 {% endfor %}
             </ul>
         </section>
+        {% if page.ads_niche %}
+        {% for i in (1..page.ads_niche) %}
+        <div class="ads">
+            {% include sidebar_ads.html %}
+        </div>
+        {% endfor %}
+        {% endif %}
     </div>
 </aside>
