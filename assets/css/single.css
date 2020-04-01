@@ -421,4 +421,8 @@ main .single-content .home-header {
 .home-single-content {
   border-bottom: 1px solid rgba(184, 184, 184, 0.24);
 }
+
+.home-single-content .home-header {
+  font-weight: bolder;
+}
 /*# sourceMappingURL=single.css.map */
