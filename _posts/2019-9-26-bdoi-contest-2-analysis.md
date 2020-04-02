@@ -6,6 +6,7 @@ mathjax: true
 author: Ahnaf Shahriar Asif
 Difficulty: Hard
 tags: [Contest analysis]
+ads_niche: 4
 categories: [contest analysis, data structure, graph, math]
 subtitle: কোডফোর্সেসে আমরা নিয়মিত প্রোগ্রামিং কন্টেস্ট নিয়ে থাকি। এরকমই একটা কন্টেস্টের এডিটোরিয়াল এটি। codeforces এর BDOI Practice Group থেকে কন্টেস্টি দেখে নাও। কন্টেস্টের টাইটলে "BDOI Practice Contest-2"। কন্টেস্টটি দেখে নাও। তারপর এডিটোরিয়াল দেখা শুরু করা যাক।  
 # background: '/img/somehow.png'

@@ -5,6 +5,7 @@ title: Disjoint Set Union (Rank + Path Compression)
 author: Ahnaf Shahriar Asif
 Difficulty: Intermediate
 tags: [Data Structure]
+ads_niche: 0
 categories: [Data Structure, Graph, tree, set]
 
 subtitle: আগের পোস্টে আমি DSU এর Rank Compression এবং সেটির Complexity নিয়ে কথা বলেছি। আজকে দেখবো Path Compression কি এবং এটির Complexity কেমন। আমরা আগের মতো এটিরও Complexity বের করবো, তবে গানিতিকভাবে না। অনেকটা কমন সেন্স ব্যাবহার করে জিনিসটার Complexity অনুভব করার চেষ্টা করবো। আশা করি এটি পড়ার পর তোমরা জিনিসটা অন্তত একটু ফিল করতে পারবে। তাই আর দেরি না করে শুরু করা যাক।

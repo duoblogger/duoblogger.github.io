@@ -5,6 +5,7 @@ mathjax: true
 author: Munim Hasan Wasi
 Difficulty: Intermediate
 subtitle: আমরা সবাই কনভেক্স হাল কি জিনিস সেটা জানি। তুমি না জানলে গুগলে সার্চ করে দেখে নাও। আমরা এই পোস্টে শিখবো কীভাবে এফিশিয়েন্টলি কনভেক্স হাল বেড় করতে হয়। 
+ads_niche: 0
 # background: '/img/somehow.png'
 tags: [Geometry] 
 categories: [Geometry]

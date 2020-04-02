@@ -7,6 +7,7 @@ author: Ahnaf Shahriar Asif
 Difficulty: Beginner
 # background: '/img/somehow.png'
 subtitle: Merge sort হলো এখন পর্যন্ত আবিষ্কৃত সবথেকে এফিশিয়েন্ট সর্টিং অ্যালগোরিদম গুলার মধ্যে একটা। এটির কম্প্লেক্সিটি $O(n log n)$। আমরা এই পোস্টে Merge sort কীভাবে কাজ করে সেই সম্পর্কে বিস্তারিত জানবো। যদিও Merge sort সরাসরি আমাদের দরকার পড়বেনা, কারন C++ এ  বিল্টইন ফাংশন আছে, কিন্তু এটি কীভাবে কাজ করে সেটি মার্জ সর্ট ট্রি শেখার সময় কাজে লাগবে।
+ads_niche: 0
 tags: [Sorting]
 categories: [sorting, Binary Search, two pointer]
 
