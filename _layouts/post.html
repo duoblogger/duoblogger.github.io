@@ -38,9 +38,18 @@ layout: main
             {% endif %}
             {% endfor %}
         </ol>
-        <br><br>
+        <!-- <br><br> -->
 
+        <!-- <h3>একই Difficulty এর বাকি পোস্টগুলোর লিস্ট দিয়ে দিচ্ছি, পড়ে দেখতে পারো:</h3> -->
+
+        {% for post in site.posts%}
+        {%  if post.tags[0] != page.tags[0] and post.title != page.title and page.Difficulty == post.Difficulty  %}
+        <br><br>
         <h3>একই Difficulty এর বাকি পোস্টগুলোর লিস্ট দিয়ে দিচ্ছি, পড়ে দেখতে পারো:</h3>
+        {% break %}
+        {% endif %}
+        {% endfor %}
+
         <br>
         <ol>
             {% for post in site.posts%}
