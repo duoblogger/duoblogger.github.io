@@ -9,6 +9,7 @@ ads_niche: 0
 tags: [Data Structure]
 subtitle: Merge Sort Tree হলো একটি ডাটা স্ট্রাকচার, বলা যায় এটি একটি সেগমেন্ট ট্রি, যেখানে প্রতিটি নোডে আমরা এটি ভ্যালু না রেখে নির্দিষ্ট সীমার সব ডাটাকে একটি লিস্ট/ভেক্টর/অ্যারেতে সর্ট করে রাখি। এটি বিভিন্ন সমস্যা সমাধান করতে সাহায্য করে। এটিতে কাজ করার জন্য মার্জ সর্টও ভালো করে বোঝাটা জরুরি।
 categories: [Data Structure, sorting, binary search, two pointer]
+permalink: /merge-sort-tree/
 # background: '/img/somehow.png'
 ---
 

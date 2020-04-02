@@ -10,6 +10,7 @@ subtitle: Merge sort হলো এখন পর্যন্ত আবিষ্�
 ads_niche: 0
 tags: [Sorting]
 categories: [sorting, Binary Search, two pointer]
+permalink: /merge-sort/
 
 ---
 
