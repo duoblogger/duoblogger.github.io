@@ -425,4 +425,9 @@ main .single-content .home-header {
 .home-single-content .home-header {
   font-weight: bolder;
 }
+
+code {
+  font-family: Consolas,monaco,monospace;
+  font-size: 20px;
+}
 /*# sourceMappingURL=single.css.map */
