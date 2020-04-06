@@ -30,7 +30,7 @@
 
     gtag("config", "UA-155290196-1");
   </script>
-
+  <!-- {% if page.mathjax %} -->
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
   <script type="text/x-mathjax-config">
@@ -38,6 +38,8 @@
       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     });
   </script>
+
+  <!-- {% endif %} -->
   <title>
     {% if page.title %} {{ page.title | escape }} - {{ site.title | escape }} {%
     else %} {{ site.title | escape }} {% endif %}

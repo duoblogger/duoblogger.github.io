@@ -1,5 +1,5 @@
 ---
-matdjax: true
+mathjax: true
 layout: post
 title: Tower of Hanoy Part 1
 author: Ahnaf Shahriar Asif

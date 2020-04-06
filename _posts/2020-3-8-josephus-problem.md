@@ -1,5 +1,5 @@
 ---
-matdjax: true
+mathjax: true
 layout: post
 title: Josephus Problem
 author: Ahnaf Shahriar Asif

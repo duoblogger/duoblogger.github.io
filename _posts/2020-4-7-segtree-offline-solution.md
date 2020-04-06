@@ -1,4 +1,20 @@
-**### Introduction**
+---
+mathjax: true
+layout: post
+title: Offline Query Solution Trick
+author: Shafin Alam
+tags: [Data Structure]
+# ads_niche: 8
+categories: [Data Structure, Segment tree]
+Difficulty: Hard
+# metaimage: https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/tower-of-hanoy-for-2.jpg
+
+subtitle: অনেকেই সেগমেন্ট ট্রি ব্য়বহার করে কিভাবে একটা সমস্য়া সহজে offline এ সমাধান করা যায় জানে না । offline বলতে বোঝানো হচ্ছে আমরা সবগুলো Query আগেই ইনপুট নিয়ে নিব । তারপর সবগুলো Query সমাধান করে একবারে আউটপুট দিব । এখানে Query গুলো ইনপুট নেওয়ার সাথে সাথে সমাধান না করে Query জমা রেখে দিয়ে পরে সমাধান করছি তাই এটাকে Offline Solution বলা হয় । 
+
+permalink: /offline-query-solution-1/
+---
+
+### Introduction
 
 
 
@@ -6,15 +22,15 @@
 
 
 
-**### Problem 1 : N টি এলিমেন্ট এর একটি অ্য়ারে A[] দেওয়া আছে এবং Q টা Query থাকবে, যেখানে (L, R) দেওয়া থাকবে, বলতে হবে এই রেঞ্জের মধ্য়ে কয়টা ভিন্ন সংখ্য়া আছে ।**
+### Problem 1 : N টি এলিমেন্ট এর একটি অ্য়ারে A[] দেওয়া আছে এবং Q টা Query থাকবে, যেখানে (L, R) দেওয়া থাকবে, বলতে হবে এই রেঞ্জের মধ্য়ে কয়টা ভিন্ন সংখ্য়া আছে ।
 
 
 
-**#### Link : [1188 - Fast Queries](http://lightoj.com/volume_showproblem.php?problem=1188)**
+#### Link : [1188 - Fast Queries](http://lightoj.com/volume_showproblem.php?problem=1188)
 
 
 
-**### সমাধান :** 
+### সমাধান :
 
 
 
@@ -22,7 +38,7 @@
 
 
 
-\```cpp
+```cpp
 
 last[] // কোন সংখ্য়া সর্বশেষ কোন index এ আপডেট করা হয়েছে ।
 
@@ -68,17 +84,17 @@ for(int i = 1; i <= n; i++)
 
   }
 
-\```
+```
 
 
 
 এই সমস্য়াটির MO's Algorithm এর সমাধান জানতে চাইলে নিচের লিংকে দেখতে পারেন ।
 
-**#### Link : [MO's Algorithm](https://rezwanarefin01.github.io/posts/block-decomposition-01/)**
+#### Link : [MO's Algorithm](https://rezwanarefin01.github.io/posts/block-decomposition-01/)
 
 
 
-**### Problem 2 : N টি ভিন্ন এলিমেন্ট এর একটি অ্য়ারে A[] দেওয়া আছে এবং Q টা Query থাকবে :** 
+### Problem 2 : N টি ভিন্ন এলিমেন্ট এর একটি অ্য়ারে A[] দেওয়া আছে এবং Q টা Query থাকবে :
 
   
 
@@ -88,11 +104,11 @@ for(int i = 1; i <= n; i++)
 
 
 
-**#### Link : [D. Yaroslav and Divisors](https://codeforces.com/problemset/problem/301/D)**
+#### Link : [D. Yaroslav and Divisors](https://codeforces.com/problemset/problem/301/D)
 
 
 
-**### সমাধান :** 
+### সমাধান :
 
 
 

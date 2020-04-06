@@ -2,7 +2,7 @@
 # mathjax: true
 layout: post
 title: merge Sort
-# mathjax: true
+mathjax: true
 author: Ahnaf Shahriar Asif
 Difficulty: Beginner
 # background: '/img/somehow.png'
