@@ -21,6 +21,11 @@ permalink: /offline-query-solution-1/
 অনেকেই সেগমেন্ট ট্রি ব্য়বহার করে কিভাবে একটা সমস্য়া সহজে offline এ সমাধান করা যায় জানে না । offline বলতে বোঝানো হচ্ছে আমরা সবগুলো Query আগেই ইনপুট নিয়ে নিব । তারপর সবগুলো Query সমাধান করে একবারে আউটপুট দিব । এখানে Query গুলো ইনপুট নেওয়ার সাথে সাথে সমাধান না করে Query জমা রেখে দিয়ে পরে সমাধান করছি তাই এটাকে Offline Solution বলা হয় । 
 
 
+### Pre-Requirements: 
+
+* [Segment Tree](http://www.shafaetsplanet.com/?p=1557)
+* [Binary Indexed Tree](http://www.shafaetsplanet.com/?p=1961)
+
 
 ### Problem 1 : 
 
@@ -32,7 +37,7 @@ permalink: /offline-query-solution-1/
 
 
 
-### সমাধান :
+### Solution:
 
 
 
@@ -100,9 +105,9 @@ for(int i = 1; i <= n; i++)
 
 **N টি ভিন্ন এলিমেন্ট এর একটি অ্য়ারে A[] দেওয়া আছে এবং Q টা Query থাকবে :**
 
-  - ith Query তে $(L_i, R_i)$ দেওয়া থাকবে ।
+  * ith Query তে $(L_i, R_i)$ দেওয়া থাকবে ।
 
-  - $(L_i, R_i)$ রেঞ্জের মধ্য়ে কয় জোড়া $(q, w)$ আছে, যেন $A_q, A_w$ কে নিঃশেষে বিভাজ্য় করে ।
+  * $(L_i, R_i)$ রেঞ্জের মধ্য়ে কয় জোড়া $(q, w)$ আছে, যেন $A_q, A_w$ কে নিঃশেষে বিভাজ্য় করে ।
 
 
 
@@ -110,7 +115,7 @@ for(int i = 1; i <= n; i++)
 
 
 
-### সমাধান :
+### Solution: 
 
 
 
