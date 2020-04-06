@@ -47,7 +47,7 @@ permalink: /offline-query-solution-1/
 
 ```cpp
 
-last[] // কোন সংখ্য়া সর্বশেষ কোন index এ আপডেট করা হয়েছে ।
+last[]; // কোন সংখ্য়া সর্বশেষ কোন index এ আপডেট করা হয়েছে ।
 sort(query+1, query+q+1, cmp);
 int cur = 1;
 for(int i = 1; i <= n; i++){
