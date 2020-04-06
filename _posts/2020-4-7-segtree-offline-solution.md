@@ -48,49 +48,23 @@ permalink: /offline-query-solution-1/
 ```cpp
 
 last[] // কোন সংখ্য়া সর্বশেষ কোন index এ আপডেট করা হয়েছে ।
-
 sort(query+1, query+q+1, cmp);
-
 int cur = 1;
-
-for(int i = 1; i <= n; i++)
-
-{
-
-  if(last[arr[i]]==-1)
-
-  {
-
+for(int i = 1; i <= n; i++){
+  if(last[arr[i]]==-1){
 ​    last[arr[i]] = i;
-
 ​    update(1, 1, n, last[arr[i]], 1);
-
   }
-
-  else if(last[arr[i]]!=-1)
-
-  {
-
+  else if(last[arr[i]]!=-1){
 ​    update(1, 1, n, last[arr[i]], -1);
-
 ​    last[arr[i]] = i;
-
 ​    update(1, 1, n, last[arr[i]], 1);
-
   }
-
-  while(i==query[cur].r)
-
-  {
-
+  while(i==query[cur].r){
 ​    ans[query[cur].ind] = get(1, 1, n, query[cur].l, query[cur].r);
-
 ​    cur++;
-
 ​    }
-
   }
-
 ```
 
 
