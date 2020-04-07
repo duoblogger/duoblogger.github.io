@@ -187,7 +187,7 @@ bool MillerRabin(u64 n, int iter=5) { // returns true if n is probably prime, el
 
 <br>
 
-<h3> ডিটামিনিস্টিক ভার্শন </h3>	
+<h3> ডিটার্মিনিস্টিক ভার্শন </h3>	
 
 <br>
 
