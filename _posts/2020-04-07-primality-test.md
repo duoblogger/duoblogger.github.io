@@ -91,7 +91,7 @@ $$\begin{array}{rl} a^{n-1} \equiv 1 \bmod n &\Longleftrightarrow a^{2^s d} - 1 
 
 নাহয়
 
-​												 $$a^{2^r d} \equiv -1 \bmod n$$
+​									   		 $$a^{2^r d} \equiv -1 \bmod n$$
 
 সত্য কিনা যেখানে $0 \le r \le s - 1$ । অর্থাৎ, সমীকরনদ্বয়ের দুটোর মধ্যে যেকোনো একটি সত্য হয় কিনা।
 
