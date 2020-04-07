@@ -172,7 +172,7 @@ bool MillerRabin(u64 n, int iter=5) { // returns true if n is probably prime, el
 
 মিলার ব়্যাবিন টেস্ট এর আগে আমরা প্রথম কয়েকটি মৌলিক সংখ্যা দিয়ে চেক করে নিতে পারি যে এগুলোর মধ্যে কোনটি $$n$$ এর উৎপাদক হয় কিনা। এটা পুরো প্রক্রিয়াটির গতি অনেক বৃদ্ধি করতে পারে। কারণ বেশিরভাগ যৌগিক সংখ্যারই কমপক্ষে একটি মৌলিক উৎপাদক থাকে যা খুবই ছোট। $$88\%$$ সংখ্যার ই সবচেয়ে ক্ষুদ্র মৌলিক উৎপাদক $$100$$ এর চেয়ে ছোট। 
 
-<h3> ডিটার্মিনিস্টিক অ্যালগোরিদম </h3> ![Open_Mouth_Emoji](https://github.com/duoblogger/duoblogger-pictures/blob/master/duoblogger%20pics/face-with-open-mouth_1f62e.png)
+<h3> ডিটার্মিনিস্টিক অ্যালগোরিদম </h3> ![Open_Mouth_Emoji](https://duoblogger.github.io/duoblogger-pictures/duoblogger%20pics/face-with-open-mouth_1f62e.png)
 
 কেমনে সম্ভব?!?
 
