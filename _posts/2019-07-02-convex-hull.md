@@ -86,3 +86,4 @@ void convex_hull(vector<pt>& a) {
 - [Timus 1185: Wall](http://acm.timus.ru/problem.aspx?space=1&num=1185)
 - [Usaco 2014 January Contest, Gold - Cow Curling](http://usaco.org/index.php?page=viewproblem2&cpid=382)
 
+সোর্স: <a href="http://e-maxx.ru/"> E-Maxx</a>
