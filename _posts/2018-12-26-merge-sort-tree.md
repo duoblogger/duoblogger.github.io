@@ -1,7 +1,7 @@
 ---
 mathjax: true
 layout: post
-title: merge Sort Tree (MST)
+title: Merge Sort Tree (MST)
 mathjax: true
 author: Munim Hasan Wasi
 Difficulty: Intermediate
