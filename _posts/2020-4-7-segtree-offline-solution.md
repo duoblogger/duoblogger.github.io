@@ -111,12 +111,12 @@ for(int a = 1; a <= n; a++){
 }
 ```
 
-এখন, চিন্তা করে দেখতে পাবে,  $a = 1$ এর জন্য নিচের লুপ $n$ বার, $a = 2$ এর জন্য \frac{n}{2} বার, $a = x$ এর জন্য নিচের লুপ \frac{n}{x} বার চলে। তাই মোট চলবে, 
+এখন, চিন্তা করে দেখতে পাবে,  $a = 1$ এর জন্য নিচের লুপ $n$ বার, $a = 2$ এর জন্য $\frac{n}{2}$ বার, $a = x$ এর জন্য নিচের লুপ $\frac{n}{x}$ বার চলে। তাই মোট চলবে, 
 
 $$
 \begin{aligned}
-\displaystyle{\frac{n}{1}+\frac{n}{2}+\frac{n}{3}+...+\frac{n}{n}} &= n \times \bigg( \displaystyle{\frac{1}{1}+ \frac{1}{2}+....+\frac{1}{n}} \bigg)
-&= n \times \ ln(n)
+\displaystyle{\frac{n}{1}+\frac{n}{2}+\frac{n}{3}+...+\frac{n}{n}} &= n \times \bigg( \displaystyle{\frac{1}{1}+ \frac{1}{2}+....+\frac{1}{n}} \bigg)\\
+&= n \times \ln(n)
 \end{aligned}
 $$
 
