@@ -115,7 +115,7 @@ for(int a = 1; a <= n; a++){
 
 $$
 \begin{aligned}
-\displaystyle{\frac{n}{1}+\frac{n}{2}+\frac{n}{3}+...+\frac{n}{n}} &= n \times \bigg( \displaystyle{\frac{1}{1}+ \frac{1}{2}+....+\frac{1}{n}} \bigg)\\
+\displaystyle{\frac{n}{1}+\frac{n}{2}+\frac{n}{3}+...+\frac{n}{n}} &= n \times \bigg( \displaystyle{\frac{1}{1}+ \frac{1}{2}+....+\frac{1}{n}} \bigg)
 &= n \times \ln(n)
 \end{aligned}
 $$
