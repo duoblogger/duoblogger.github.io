@@ -433,4 +433,13 @@ code {
 code span {
   font-family: Consolas,monaco,monospace;
 }
+
+.highlighter-rouge {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.page-content h3 {
+  margin-top: 60px;
+}
 /*# sourceMappingURL=single.css.map */
