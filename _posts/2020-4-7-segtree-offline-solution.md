@@ -130,7 +130,6 @@ $$
 
 ```c++
 fenwick tree;
-
 sort(v.begin(),v.end(),cmp1);// pairs are sorted by their b
 sort(q.begin(),q.end(),cmp2);// updates are sorted by their R
 
@@ -138,18 +137,17 @@ int cur = 0;
 int sz = v.size();
 
 for(auto x: q){
-	for(;cur<sz;cur++){
-		if(pos[v[cur].second] > x.r)break;
-		tree.add(pos[v[cur].first],1);
-		// updating the paris if their b <= query-R
-	}
-	ans[x.indx] = tree.get(x.r)-tree.get(x.l-1);
-	// finding the answer using a binary indexed tree. 
-	// you can use any range upd-query ds to solve this
+    for(;cur <sz;cur++){
+        if(pos[v[cur].second] > x.r)break;
+        tree.add(pos[v[cur].first],1);
+        // updating the paris if their b <= query-R
+    }
+    ans[x.indx] = tree.get(x.r)-tree.get(x.l-1);
+    // finding the answer using a binary indexed tree.
+    // you can use any range upd-query ds to solve this
 }
-
 for(int i = 0; i < m;i++){
-	printf("%d\n",ans[i]);// printing them in order
+    printf("%d\n",ans[i]);// printing them in order
 }
 ```
 
