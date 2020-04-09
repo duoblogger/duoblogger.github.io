@@ -21,8 +21,6 @@ permalink: /offline-query-solution-1/
 * [Binary Indexed Tree](http://www.shafaetsplanet.com/?p=1961)
 
 
-<br>
-<br>
 
 ### Introduction
 
@@ -30,8 +28,7 @@ permalink: /offline-query-solution-1/
 
 অনেকেই সেগমেন্ট ট্রি ব্য়বহার করে কিভাবে একটা সমস্য়া সহজে offline এ সমাধান করা যায় জানে না । offline বলতে বোঝানো হচ্ছে আমরা সবগুলো Query আগেই ইনপুট নিয়ে নিব । তারপর সবগুলো Query সমাধান করে একবারে আউটপুট দিব । এখানে Query গুলো ইনপুট নেওয়ার সাথে সাথে সমাধান না করে Query জমা রেখে দিয়ে পরে সমাধান করছি তাই এটাকে Offline Solution বলা হয় । 
 
-<br>
-<br>
+
 
 ### Problem 1 : 
 
@@ -42,8 +39,7 @@ permalink: /offline-query-solution-1/
 
 #### Link : [1188 - Fast Queries](http://lightoj.com/volume_showproblem.php?problem=1188)
 
-<br>
-<br>
+
 
 ### Solution:
 
@@ -81,8 +77,7 @@ for(int i = 1; i <= n; i++){
 
 #### Link : [MO's Algorithm](https://rezwanarefin01.github.io/posts/block-decomposition-01/)
 
-<br>
-<br>
+
 
 ### Problem 2 : 
 
@@ -98,8 +93,7 @@ for(int i = 1; i <= n; i++){
 
 #### Link : [D. Yaroslav and Divisors](https://codeforces.com/problemset/problem/301/D)
 
-<br>
-<br>
+
 
 ### Solution: 
 
@@ -107,8 +101,6 @@ for(int i = 1; i <= n; i++){
 
 এখানেও আগের সমস্য়ার মতো সেগমেন্ট ট্রি দিয়ে offline এ সমাধান করব । এক্ষেত্রে কোন এলিমেন্ট পাওয়ার পরে ঐ এলিমেন্ট যেসকল এলিমেন্ট দিয়ে বিভাজ্য় ঐ সংখ্য়াগুলোর index আপডেট করব । ধরি $i^{th}$ index এ আছি । তাহলে $i^{th}$ index এর এলিমেন্টের যেসকল উৎপাদকগুলোর পজিশন  $i$ থেকে ছোট ঐ সকল উৎপাদকের index আপডেট করব । কিন্তু এতে আমরা সবসময় সঠিক সমাধান পাবো না । যদি কোন রেঞ্জে $2,4,16,8$ থাকে, তাহলে $16$ এর জন্য় $2$, $4$ কে গণনা করা হলেও $8$ গণনা করা হবে না । তাই আমরা আবার শেষ থেকে আবার লুপ চালিয়ে যে জোড়াগুলো গণনা করা হয়নি সেগুলো বের করে সমাধান এ যোগ করে নিব । 
 
-<br>
-<br>
 
 ### Alternate Solution: 
 
