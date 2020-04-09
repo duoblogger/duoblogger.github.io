@@ -63,6 +63,7 @@
             </ul>
         </section>
         {% if page.ads_niche %}
+        {% include lomba_ads.html %}
         {% for i in (1..page.ads_niche) %}
         <div class="ads">
             {% include sidebar_ads.html %}
