@@ -67,8 +67,8 @@ for(int i = 1; i <= n; i++){
   while(i==query[cur].r){
 ​    ans[query[cur].ind] = get(1, 1, n, query[cur].l, query[cur].r);
 ​    cur++;
-​    }
-  }
+​  }
+}
 ```
 
 
