@@ -9,7 +9,7 @@ ads_niche: 0
 # background: '/img/somehow.png'
 tags: [Geometry] 
 categories: [Geometry]
-permalink: /convex-hull/
+permalink: /конвэкс-халл/
 ---
 
 আজকে আমরা অনেকগুলো কার্তেসিয় স্থানাঙ্ক দেওয়া থাকলে সেটার কনভেক্স হাল বের করা শিখবো।
