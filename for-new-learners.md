@@ -8,4 +8,4 @@ permalink: /for-new-learners/
 # background: "/img/somehow.png"
 ---
 
-Hello World
+working on it nigga. have patience :sob:

@@ -3,30 +3,58 @@
         <section class="authors">
             <h3>Authors</h3>
             <ul class="authors-list">
-                <li><a target="_blank" href="https://www.facebook.com/ahnaf.shahriar.7121">Ahnaf Shahriar Asif</a></li>
-                <li><a target="_blank" href="https://www.facebook.com/HBKWasi">Munim Hasan Wasi</a></li>
-                <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100009412935900">Shafin Alam</a>
+                <li>
+                    <a
+                        target="_blank"
+                        href="https://www.facebook.com/ahnaf.shahriar.7121"
+                        >Ahnaf Shahriar Asif</a
+                    >
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/HBKWasi"
+                        >Munim Hasan Wasi</a
+                    >
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        href="https://www.facebook.com/profile.php?id=100009412935900"
+                        >Shafin Alam</a
+                    >
                 </li>
             </ul>
         </section>
-        <!-- <div class="ads">
-            Google Ad Here
-        </div> -->
+        <div class="ads">
+            <script
+                async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+            ></script>
+
+            <ins
+                class="adsbygoogle"
+                style="display: block;"
+                data-ad-client="ca-pub-8949878373616356"
+                data-ad-slot="4039276922"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+            ></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
         <section class="category">
             <h3>Category</h3>
 
-            {%- capture site_tags -%}
-            {%- for tag in site.tags -%}
-            {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
-            {%- endfor -%}
-            {%- endcapture -%}
-            {%- assign tags_list = site_tags | split:',' | sort -%}
-
-            {%- for tag in tags_list -%}
+            {%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag |
+            first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor
+            -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:','
+            | sort -%} {%- for tag in tags_list -%}
             <h4>{{- tag -}} ({{site.tags[tag].size}})</h4>
             <ul class="category">
                 {%- for post in site.tags[tag] -%}
-                <li><a href="{{ post.url | relative_url }}">{{post.title}}</a></li>
+                <li>
+                    <a href="{{ post.url | relative_url }}">{{post.title}}</a>
+                </li>
                 {%- endfor -%}
             </ul>
             {%- endfor -%}
@@ -38,37 +66,45 @@
             <h3>Articles By Difficulty</h3>
             <h4>Beginner</h4>
             <ul class="category">
-                {% for post in site.posts %}
-                {% if post.Difficulty == "Beginner" %}
-                <li><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></li>
-                {% endif %}
-                {% endfor %}
+                {% for post in site.posts %} {% if post.Difficulty == "Beginner"
+                %}
+                <li>
+                    <a
+                        href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"
+                        >{{post.title}}</a
+                    >
+                </li>
+                {% endif %} {% endfor %}
             </ul>
             <h4>Intermediate</h4>
             <ul class="category">
-                {% for post in site.posts %}
-                {% if post.Difficulty == "Intermediate" %}
-                <li><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></li>
-                {% endif %}
-                {% endfor %}
-
+                {% for post in site.posts %} {% if post.Difficulty ==
+                "Intermediate" %}
+                <li>
+                    <a
+                        href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"
+                        >{{post.title}}</a
+                    >
+                </li>
+                {% endif %} {% endfor %}
             </ul>
             <h4>Hard</h4>
             <ul class="category">
-                {% for post in site.posts %}
-                {% if post.Difficulty == "Hard" %}
-                <li><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a></li>
-                {% endif %}
-                {% endfor %}
+                {% for post in site.posts %} {% if post.Difficulty == "Hard" %}
+                <li>
+                    <a
+                        href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"
+                        >{{post.title}}</a
+                    >
+                </li>
+                {% endif %} {% endfor %}
             </ul>
         </section>
-        {% if page.ads_niche %}
-        {% include lomba_ads.html %}
-        {% for i in (1..page.ads_niche) %}
+        {% if page.ads_niche %} {% include lomba_ads.html %} {% for i in
+        (1..page.ads_niche) %}
         <div class="ads">
             {% include sidebar_ads.html %}
         </div>
-        {% endfor %}
-        {% endif %}
+        {% endfor %} {% endif %}
     </div>
 </aside>
