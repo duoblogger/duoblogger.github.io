@@ -113,10 +113,8 @@ int main(){
 
 -   **Graph Algorithm (Shafayet Ashraf)**
 
--   **[CP-Handbook](/assets/pdf/memonvyftw/cp-handbook.pdf)**
+*   **[Competitive Programming 3](/assets/pdf/memonvyftw/cp-3.pdf)**
 
--   **[Competitive Programming 3](/assets/pdf/memonvyftw/cp-3.pdf)**
-
--   **[Guide to Competitive Programming](/assets/pdf/memonvyftw/guide-t-cp.pdf)**
+*   **[Guide to Competitive Programming](/assets/pdf/memonvyftw/guide-t-cp.pdf)**
 
 এগুলা জোগাড় করে পড়া শুরু করেন, পাশাপাশি প্রব্লেম সল্ভিল আর ম্যাথ সল্ভিং করতে থাকবেন। তারপর অ্যালগো-ডাটা স্ট্রাকচার শিখে, ওই রিলেটের প্রব্লেমগুলো সল্ভ করতে থাকবেন, [lightoj](http://lightoj.com/), [codeforces](http://codeforces.com/), [atcoder](https://atcoder.jp/), [spoj](https://www.spoj.com/), [codechef](https://www.codechef.com/) এরকম আরো অনেক আছে। এই পর্যন্ত করতে থাকুন, বাকি জিনিসপত্র পরে লেখার চেষ্টা করবো। আর হ্যা, অনেক কিছুই না বুঝে শিখতে বলেছি, তার পিছনে কারন আছে আলাদা। তবে এই পোস্টের শেষ ধাপে যদি এসে থাকেন তাহলে অলরেডি সবকিছু ক্লিয়ার হয়ে যাওয়ার কথা। টাটা বাইবাই :)
