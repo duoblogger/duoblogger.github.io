@@ -8,7 +8,7 @@ categories: [strings, sorting, searching]
 Difficulty: Beginner
 ads_niche: 0
 background: "/img/somehow.png"
-permalink: /з-фанксан/
+permalink: /z-function/
 subtitle: ধরি আমাদের একটি স্ট্রিং $s$ দেয়া আছে। স্ট্রিংটির দৈর্ঘ্য $|s|$ ওই স্ট্রিং $s$ এর জন্য $z$-ফাংশন হচ্ছে একটি $|s|$ সাইজের অ্যারে, যেখানে $i$ তম উপাদান $z[i]$ হচ্ছে একটা স্বাভাবিক সংখ্যা, যেটা নির্দেশ করে $s$ এর $i$ তম ইনডেক্স থেকে শুরু করে সর্বোচ্চ কত বড় <a href="https://en.wikipedia.org/wiki/Substring#Substring">সাবস্ট্রিং</a> নেওয়া যাবে যেন সেটা $s$ এর <a href="https://en.wikipedia.org/wiki/Substring#Prefix">প্রিফিক্স</a> হয়।
 ---
 
